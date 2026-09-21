@@ -1,0 +1,45 @@
+/* =====================================================
+   DETAIL MODAL
+   PRINCIPLE & REASON
+===================================================== */
+
+
+/* ===============================
+   REASON SECTION
+================================ */
+
+.dm-section-reason {
+    margin-bottom: 28px;
+}
+
+
+/* ===============================
+   REASON TITLE
+================================ */
+
+.dm-section-reason h3 {
+    font-size: 20px;
+    margin: 0 0 15px;
+    padding-left: 12px;
+    border-left: 5px solid #333;
+}
+
+
+/* ===============================
+   REASON TEXT
+================================ */
+
+.dm-section-reason .dm-text {
+    margin: 0;
+}
+
+.dm-section-reason .dm-text p {
+    margin: 0 0 6px;
+    line-height: 1.7;
+    text-align: left;
+    text-indent: 2em;
+}
+
+.dm-section-reason .dm-text p:last-child {
+    margin-bottom: 0;
+}

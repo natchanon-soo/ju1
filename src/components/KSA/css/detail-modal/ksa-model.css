@@ -1,0 +1,188 @@
+/* =========================================================
+   KSA MODEL
+========================================================= */
+
+
+/* =========================================================
+   KSA MODEL BOX
+========================================================= */
+
+.dm-ksa-model-box {
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   KSA MODEL WRAPPER
+========================================================= */
+
+.dm-ksa-model-wrapper {
+    width: 100%;
+}
+
+
+/* =========================================================
+   KSA MODEL TITLE
+========================================================= */
+
+.dm-ksa-model-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1f2937;
+
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   KSA SECTION
+   Knowledge / Skills / Attribute
+========================================================= */
+
+.dm-ksa-section {
+    margin-bottom: 16px;
+}
+
+
+/* =========================================================
+   KSA GROUP
+========================================================= */
+
+.dm-ksa-group {
+    margin-top: 18px;
+
+    padding: 18px;
+
+    border: 1px solid #e7e7e7;
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   GROUP TITLE
+========================================================= */
+
+.dm-ksa-group h5 {
+    margin: 0 0 14px 0;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #ddd;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INLINE SCORE
+========================================================= */
+
+.dm-ksa-inline-score {
+    margin-top: 16px;
+
+    padding-top: 14px;
+
+    border-top: 1px dashed #ddd;
+}
+
+
+/* =========================================================
+   INLINE SCORE HEADER
+========================================================= */
+
+.dm-ksa-inline-score-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 7px;
+}
+
+
+.dm-ksa-inline-score-header strong {
+    font-size: 14px;
+}
+
+
+.dm-ksa-inline-score-header span {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   INLINE SCORE TRACK
+========================================================= */
+
+.dm-ksa-inline-track {
+    width: 100%;
+
+    height: 18px;
+
+    background: #e8e8e8;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   INLINE SCORE BAR
+========================================================= */
+
+.dm-ksa-inline-bar {
+    height: 100%;
+
+    min-width: 4px;
+
+    background: #52a7df;
+
+    border-radius: 999px;
+
+    transition: width 0.4s ease;
+}
+
+
+/* =========================================================
+   KSA SCORE AREA
+========================================================= */
+
+.dm-ksa-score-area {
+    margin-top: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .dm-ksa-model-wrapper {
+        width: 100%;
+    }
+
+    .dm-ksa-group {
+        padding: 14px;
+    }
+
+    .dm-ksa-group h5 {
+        font-size: 16px;
+    }
+
+}

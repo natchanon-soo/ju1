@@ -1,0 +1,45 @@
+/* =========================================
+   Budget Bar
+========================================= */
+
+.cell.bar {
+    overflow: visible;
+    padding-left: 10px;
+}
+
+.cell.bar .track {
+    position: relative;
+    overflow: visible;
+}
+
+
+/* =========================================
+   ใช้จริง
+========================================= */
+
+.cell.bar .fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+
+/* =========================================
+   ขีดงบจัดสรร
+========================================= */
+
+.cell.bar .budget-limit {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 2px;
+
+    background: var(--primary);
+
+    z-index: 2;
+}
+
+.fill.over-budget {
+    background: #dc2626;
+}

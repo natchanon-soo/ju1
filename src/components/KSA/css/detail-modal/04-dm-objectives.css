@@ -1,0 +1,44 @@
+/* =====================================================
+   DETAIL MODAL
+   OBJECTIVES
+===================================================== */
+
+
+/* ===============================
+   OBJECTIVES SECTION
+================================ */
+
+.dm-section-objectives {
+    margin-bottom: 28px;
+}
+
+
+/* ===============================
+   OBJECTIVES TITLE
+================================ */
+
+.dm-section-objectives h3 {
+    font-size: 20px;
+    margin: 0 0 15px;
+    padding-left: 12px;
+    border-left: 5px solid #333;
+}
+
+
+/* ===============================
+   OBJECTIVES LIST
+================================ */
+
+.dm-section-objectives .dm-list {
+    margin: 0;
+    padding-left: 28px;
+}
+
+.dm-section-objectives .dm-list li {
+    margin-bottom: 6px;
+    line-height: 1.7;
+}
+
+.dm-section-objectives .dm-list li:last-child {
+    margin-bottom: 0;
+}

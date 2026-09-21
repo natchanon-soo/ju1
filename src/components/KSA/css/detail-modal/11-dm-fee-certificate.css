@@ -1,0 +1,59 @@
+.dm-section-fee-certificate {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.dm-section-fee-certificate h3 {
+        font-size: 20px;
+    margin: 0 0 12px;
+    padding-left: 12px;
+    border-left: 5px solid #333;
+    
+}
+
+.dm-option-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    line-height: 1.7;
+
+    background: #fafafa;
+    padding: 12px 18px 8px 15px;
+    border-radius: 12px;
+    width: 96%;
+    margin: auto;
+    margin-bottom: 8px;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.dm-option-label {
+    min-width: 280px;
+    font-weight: 500;
+}  
+
+.dm-option-row span {
+    font-size: 14px;
+    
+}
+
+/*
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 20px;
+    line-height: 1.9;
+    color: #333;
+    white-space: pre-line;
+    text-align: justify;
+*/
+
+.dm-option-g {
+    display: flex;
+    gap: 10px;
+}
+
+.dm-option-g2 {
+    display: flex;
+}

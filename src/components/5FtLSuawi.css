@@ -1,0 +1,368 @@
+/* =========================
+   PAGE
+========================= */
+
+.page.svelte-e12qt1 {
+    padding: 26px 20px 0;
+}
+
+.page-head.svelte-e12qt1 {
+    margin-bottom: 14px;
+}
+
+.page-head.svelte-e12qt1
+h1:where(.svelte-e12qt1) {
+    font-size: 22px;
+}
+
+
+/* =========================
+   SEARCH BAR
+========================= */
+
+.searchbar.svelte-e12qt1 {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 4px 14px;
+    margin-bottom: 12px;
+}
+
+.searchbar.svelte-e12qt1
+.ic:where(.svelte-e12qt1) {
+    display: inline-flex;
+    align-items: center;
+
+    color: var(--text-muted);
+}
+
+.searchbar.svelte-e12qt1
+input:where(.svelte-e12qt1) {
+    flex: 1;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    font-size: 16px;
+
+    padding: 12px 0;
+}
+
+.clear.svelte-e12qt1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+
+    border: 0;
+    border-radius: 999px;
+
+    background: var(--surface-2);
+    color: var(--text-muted);
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   EXAMPLES
+========================= */
+
+.examples.svelte-e12qt1 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 14px;
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.layout.svelte-e12qt1 {
+    display: grid;
+
+    grid-template-columns:
+        240px 1fr;
+
+    gap: 16px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   RESULT HEADER
+========================= */
+
+.res-head.svelte-e12qt1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESULT LIST
+========================= */
+
+.res-list.svelte-e12qt1 {
+    overflow: hidden;
+}
+
+.ri.svelte-e12qt1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 16px;
+
+    width: 100%;
+
+    padding: 12px 16px;
+
+    border: 0;
+    border-bottom:
+        1px solid var(--border);
+
+    background: transparent;
+
+    font-family: inherit;
+    text-align: left;
+
+    color: var(--text);
+
+    cursor: pointer;
+}
+
+.ri.svelte-e12qt1:hover {
+    background: var(--surface-2);
+}
+
+.ri-main.svelte-e12qt1 {
+    min-width: 0;
+}
+
+.ri-title.svelte-e12qt1 {
+    display: block;
+
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.ri-sub.svelte-e12qt1 {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 12.5px;
+
+    color: var(--text-muted);
+}
+
+.ri-path.svelte-e12qt1 {
+    display: block;
+
+    margin: 4px 0 6px;
+
+    font-size: 12px;
+}
+
+.ri-path.svelte-e12qt1
+.org-logo {
+    display: inline-block;
+
+    vertical-align: -.3em;
+
+    margin-right: 4px;
+}
+
+.ri-tags.svelte-e12qt1 {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 5px;
+}
+
+.ri-amt.svelte-e12qt1 {
+    font-weight: 700;
+    font-size: 14.5px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   MODAL BACKDROP
+========================= */
+
+.modal-backdrop.svelte-e12qt1 {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 60;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+
+    background: #0f172a73;
+
+    -webkit-backdrop-filter:
+        blur(2px);
+
+    backdrop-filter:
+        blur(2px);
+}
+
+
+/* =========================
+   MODAL SHEET
+========================= */
+
+.modal-sheet.svelte-e12qt1 {
+    width: 540px;
+    max-width: 92vw;
+    height: 100%;
+
+    overflow: auto;
+
+    background: var(--surface);
+
+    box-shadow:
+        -8px 0 30px #00000040;
+
+    animation:
+        svelte-e12qt1-sheet-in
+        .2s ease-out;
+}
+
+.modal-sheet.svelte-e12qt1
+.detail {
+    position: static;
+
+    border: 0;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    max-height: none;
+    min-height: 100%;
+}
+
+
+/* =========================
+   MODAL ANIMATION
+========================= */
+
+@keyframes svelte-e12qt1-sheet-in {
+
+    0% {
+        transform:
+            translate(24px);
+
+        opacity: .5;
+    }
+
+    to {
+        transform:
+            translate(0);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   MORE
+========================= */
+
+.more.svelte-e12qt1 {
+    padding: 12px 16px;
+
+    font-size: 12.5px;
+    text-align: center;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .layout.svelte-e12qt1 {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-backdrop.svelte-e12qt1 {
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .modal-sheet.svelte-e12qt1 {
+        width: 100%;
+        max-width: none;
+
+        height: auto;
+        max-height: 90vh;
+
+        border-radius:
+            16px 16px 0 0;
+
+        box-shadow:
+            0 -8px 30px #00000040;
+
+        animation:
+            svelte-e12qt1-sheet-up
+            .18s ease-out;
+    }
+
+    .modal-sheet.svelte-e12qt1
+    .detail {
+        border-radius:
+            16px 16px 0 0;
+
+        min-height: 0;
+    }
+
+
+    /* Mobile modal animation */
+
+    @keyframes svelte-e12qt1-sheet-up {
+
+        0% {
+            transform:
+                translateY(12px);
+
+            opacity: .6;
+        }
+
+        to {
+            transform:
+                translateY(0);
+
+            opacity: 1;
+        }
+    }
+}

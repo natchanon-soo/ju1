@@ -1,0 +1,2228 @@
+/* ======================================
+   Detail Modal
+====================================== */
+
+
+/* ======================================
+   Detail Modal Right Side Sheet
+====================================== */
+
+
+.dm-backdrop {
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    z-index:9999;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+}
+
+
+
+
+
+.dm-modal {
+
+
+    width:720px;
+
+
+    max-width:90vw;
+
+
+    height:100vh;
+
+
+    background:#fff;
+
+
+    overflow-y:auto;
+
+
+    padding:25px;
+
+
+    box-shadow:
+
+    -5px 0 25px rgba(0,0,0,.2);
+
+
+    animation:
+
+    slideRight .25s ease;
+
+
+}
+
+
+
+
+
+
+@keyframes slideRight {
+
+
+    from {
+
+        transform:translateX(100%);
+
+    }
+
+
+    to {
+
+        transform:translateX(0);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* Mobile */
+
+
+@media(max-width:768px){
+
+
+    .dm-modal {
+
+
+        width:100%;
+
+
+        max-width:100%;
+
+
+        padding:18px;
+
+
+    }
+
+
+}
+
+
+/* ======================================
+   Header
+====================================== */
+
+
+.dm-header {
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    border-bottom:1px solid #ddd;
+
+    padding-bottom:20px;
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.dm-title {
+
+
+    display:flex;
+
+    gap:18px;
+
+    align-items:center;
+
+
+}
+
+
+
+.dm-logo {
+
+
+    width:65px;
+
+    height:65px;
+
+    object-fit:contain;
+
+
+}
+
+
+
+
+
+.dm-title small {
+
+
+    color:#777;
+
+    font-size:14px;
+
+
+}
+
+
+
+.dm-title h2 {
+
+
+    margin:5px 0 0;
+
+    font-size:24px;
+
+    line-height:1.5;
+
+
+}
+
+
+
+
+.dm-close {
+
+
+    border:none;
+
+    background:#eee;
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+
+}
+
+
+
+
+
+/* ======================================
+   Summary Card
+====================================== */
+
+
+.dm-summary {
+
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr 2fr;
+
+    gap:15px;
+
+    margin-bottom:16px;
+
+
+}
+
+
+
+
+
+.dm-card {
+
+
+    background:#f7f7f7;
+
+    border-radius:12px;
+
+    padding:18px;
+
+
+}
+
+
+
+
+.dm-card span {
+
+
+    display:block;
+
+    color:#777;
+
+    font-size:14px;
+
+    margin-bottom:8px;
+
+
+}
+
+
+
+.dm-card strong {
+
+
+    font-size:20px;
+
+
+}
+
+
+
+
+
+
+/* ======================================
+   Section
+====================================== */
+
+
+.dm-section {
+
+
+    margin-top:28px;
+
+
+}
+
+
+
+
+.dm-section h3 {
+
+
+    font-size:20px;
+
+    margin-bottom:15px;
+
+
+    padding-left:12px;
+
+    border-left:5px solid #333;
+
+
+}
+
+
+
+
+
+
+.dm-text {
+
+
+    line-height:1.9;
+
+    white-space:pre-line;
+
+    color:#333;
+
+
+}
+
+
+
+
+
+
+/* ======================================
+   Info
+====================================== */
+
+
+.dm-info {
+
+
+    display:flex;
+
+    gap:20px;
+
+    padding:10px 0;
+
+    border-bottom:1px dashed #ddd;
+
+
+}
+
+
+
+.dm-info span {
+
+
+    width:180px;
+
+    color:#666;
+
+
+}
+
+
+
+.dm-info strong {
+
+
+    flex:1;
+
+
+}
+
+
+
+
+
+
+
+/* ======================================
+   List
+====================================== */
+
+
+.dm-list {
+
+
+    line-height:1.8;
+
+    padding-left:25px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ======================================
+   Activity / Table
+====================================== */
+
+
+.dm-table-card {
+
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    padding:18px;
+
+    margin-bottom:15px;
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+.dm-table-card h4 {
+
+
+    margin:0 0 12px;
+
+    font-size:17px;
+
+
+}
+
+
+
+.dm-table-card h4 span {
+
+
+    float:right;
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+.dm-table-card table {
+
+
+    width:100%;
+
+    border-collapse:collapse;
+
+
+}
+
+
+
+.dm-table-card td {
+
+
+    padding:12px;
+
+    border-bottom:1px solid #eee;
+
+    vertical-align:top;
+
+
+}
+
+
+
+
+.dm-table-card td:first-child {
+
+
+    width:70%;
+
+    font-weight:bold;
+
+
+
+}
+
+
+
+
+.dm-table-card td:last-child {
+
+
+    width:30%;
+
+    text-align:right;
+
+    white-space:nowrap;
+
+
+}
+
+
+
+
+
+
+/* ======================================
+   Budget
+====================================== */
+
+
+.dm-budget {
+
+
+    margin-top:10px;
+
+
+}
+
+
+
+
+.dm-budget td:first-child {
+
+
+    font-weight:normal;
+
+    background:white;
+
+
+}
+
+
+
+
+
+/* ======================================
+   Schedule
+====================================== */
+
+
+.dm-schedule {
+
+
+    border-left:3px solid #333;
+
+    padding-left:20px;
+
+
+}
+
+
+
+
+.dm-schedule-row {
+
+
+    display:flex;
+
+    gap:20px;
+
+    padding:12px 0;
+
+    border-bottom:1px dashed #ddd;
+
+
+}
+
+
+
+.dm-schedule-row strong {
+
+
+    min-width:150px;
+
+
+}
+
+
+
+
+
+
+/* ======================================
+   KPI
+====================================== */
+
+
+.dm-kpi-row {
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+
+    padding:15px;
+
+    margin-bottom:10px;
+
+
+    background:#f7f7f7;
+
+    border-radius:10px;
+
+
+}
+
+
+
+.dm-kpi-row span {
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+
+
+
+
+/* ======================================
+   Responsive
+====================================== */
+
+
+@media(max-width:768px){
+
+
+
+.dm-modal {
+
+    padding:18px;
+
+}
+
+
+
+.dm-summary {
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+.dm-title h2 {
+
+
+    font-size:18px;
+
+
+}
+
+
+
+.dm-info {
+
+
+    display:block;
+
+
+}
+
+
+
+.dm-info span {
+
+
+    display:block;
+
+    margin-bottom:5px;
+
+
+}
+
+
+
+.dm-schedule-row {
+
+
+    display:block;
+
+
+}
+
+
+
+.dm-schedule-row strong {
+
+
+    display:block;
+
+    margin-bottom:5px;
+
+
+}
+
+
+
+.dm-kpi-row {
+
+
+    display:block;
+
+
+}
+
+
+
+.dm-table-card {
+
+
+    overflow-x:auto;
+
+
+}
+
+
+}
+
+
+
+/* ======================================
+   Detail Modal Extra Style
+====================================== */
+
+
+/* ---------- Scrollbar ---------- */
+
+.dm-modal::-webkit-scrollbar {
+
+    width:8px;
+
+}
+
+
+.dm-modal::-webkit-scrollbar-thumb {
+
+    background:#bbb;
+
+    border-radius:10px;
+
+}
+
+
+
+
+/* ---------- Header ---------- */
+
+
+.dm-title h2 {
+
+    font-weight:700;
+
+    color:#222;
+
+}
+
+
+.dm-title small {
+
+    color:#777;
+
+}
+
+
+
+
+
+/* ---------- Info Box ---------- */
+
+
+.dm-info {
+
+
+    background:#fafafa;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    margin-bottom:10px;
+
+
+}
+
+
+.dm-info span {
+
+
+    font-weight:600;
+
+    color:#555;
+
+
+}
+
+
+
+
+
+/* ---------- Long Text ---------- */
+
+
+.dm-text {
+
+
+    background:#fafafa;
+
+    padding:20px;
+
+    border-radius:12px;
+
+
+    line-height:1.9;
+
+    text-align:justify;
+
+
+}
+
+
+
+
+
+
+/* ---------- Objective List ---------- */
+
+
+.dm-list {
+
+
+    background:#fafafa;
+
+    padding:20px 30px;
+
+    border-radius:12px;
+
+
+}
+
+
+.dm-list li {
+
+
+    margin-bottom:10px;
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+/* ---------- Image ---------- */
+
+
+.dm-cover-image {
+
+
+    width:100%;
+
+
+    max-height:450px;
+
+
+    object-fit:cover;
+
+
+    border-radius:16px;
+
+
+    margin-bottom:20px;
+
+
+    box-shadow:
+
+    0 5px 20px rgba(0,0,0,.15);
+
+
+}
+
+
+
+
+
+
+
+/* ---------- Link Button ---------- */
+
+
+.dm-link-list a {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+
+    border:1px solid #ddd;
+
+
+    background:white;
+
+
+    transition:.25s;
+
+
+}
+
+
+
+.dm-link-list a:hover {
+
+
+    transform:translateY(-2px);
+
+
+    box-shadow:
+
+    0 5px 15px rgba(0,0,0,.12);
+
+
+}
+
+
+
+
+
+.dm-button-link {
+
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+        gap:8px;
+
+    color:#000;
+
+
+    font-weight:bold;
+
+
+    transition:.2s;
+
+
+}
+
+
+
+.dm-button-link:hover {
+
+
+        color:#111;
+
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+
+
+
+/* ---------- Activity Card ---------- */
+
+
+.dm-table-card {
+
+
+    background:white;
+
+
+    box-shadow:
+
+    0 3px 15px rgba(0,0,0,.08);
+
+
+}
+
+
+
+
+
+.dm-table-card h4 {
+
+
+    padding-bottom:10px;
+
+
+    border-bottom:1px solid #eee;
+
+
+}
+
+
+
+
+
+
+.dm-table-card table {
+
+
+    margin-top:10px;
+
+
+}
+
+
+
+
+
+.dm-table-card tr:last-child td {
+
+
+    border-bottom:none;
+
+
+}
+
+
+
+
+
+
+
+
+.dm-table-card td:first-child {
+
+
+    color:#444;
+
+}
+
+
+
+
+
+.dm-table-card td:last-child {
+
+
+    font-weight:600;
+
+
+}
+
+
+
+
+
+
+/* ---------- Budget ---------- */
+
+
+.dm-budget-total {
+
+
+    font-size:22px;
+
+
+    font-weight:bold;
+
+
+    text-align:right;
+
+
+}
+
+
+
+
+
+/* ---------- Schedule Timeline ---------- */
+
+
+.dm-schedule {
+
+
+    position:relative;
+
+
+}
+
+
+
+
+.dm-schedule-row {
+
+
+    background:#fafafa;
+
+
+    border-radius:10px;
+
+
+    padding:16px;
+
+
+    margin-bottom:12px;
+
+
+    transition:.2s;
+
+
+}
+
+
+
+.dm-schedule-row:hover {
+
+
+    background:#f1f1f1;
+
+
+}
+
+
+
+.dm-schedule-row strong {
+
+
+    color:#222;
+
+
+}
+
+
+
+
+
+
+/* ---------- KPI ---------- */
+
+
+.dm-kpi-row {
+
+
+    border:1px solid #eee;
+
+
+    background:white;
+
+
+    box-shadow:
+
+    0 2px 10px rgba(0,0,0,.05);
+
+
+}
+
+
+
+.dm-kpi-row span {
+
+
+    flex:1;
+
+
+}
+
+
+
+.dm-kpi-row strong {
+
+
+    background:#f1f1f1;
+
+
+    padding:8px 15px;
+
+
+    border-radius:20px;
+
+
+}
+
+
+
+
+
+
+
+/* ---------- Mobile ---------- */
+
+
+@media(max-width:600px){
+
+
+    .dm-header {
+
+
+        align-items:flex-start;
+
+    }
+
+
+
+    .dm-logo {
+
+
+        width:45px;
+
+        height:45px;
+
+
+    }
+
+
+
+    .dm-title h2 {
+
+
+        font-size:16px;
+
+
+    }
+
+
+
+    .dm-table-card {
+
+
+        overflow-x:auto;
+
+
+    }
+
+
+
+    .dm-kpi-row strong {
+
+
+        display:inline-block;
+
+        margin-top:10px;
+
+
+    }
+
+
+}
+
+
+
+/* เอกสารที่เกี่ยวข้อง */
+
+.dm-section .dm-button-link {
+
+    flex:1;
+
+}
+
+
+
+/* container ของ link */
+
+.dm-section:has(.dm-button-link) {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+
+/* แถวเอกสาร */
+
+.dm-section:has(.dm-button-link)::after {
+
+    content:"";
+
+}
+
+
+/* ใช้ wrapper แนะนำกว่า */
+.dm-document-list {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+}
+
+
+.dm-document-list .dm-button-link {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+
+.dm-budget-total {
+
+    margin-top:20px;
+
+    padding:20px;
+
+    background:#eeeeee;
+
+    color:#000;
+
+    border-radius:14px;
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+
+    font-size:18px;
+
+}
+
+
+.dm-budget-total span {
+
+    display:inline;
+
+}
+
+
+.dm-budget-total strong {
+
+    font-size:24px;
+
+}
+
+
+
+
+/* ===============================
+   Detail Modal Overlay
+================================ */
+
+
+.modal-backdrop{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    z-index:9999;
+
+    backdrop-filter:blur(3px);
+
+}
+
+
+
+/* ===============================
+   Modal Sheet
+================================ */
+
+
+.modal-sheet{
+
+    width:min(1000px,95vw);
+
+    height:100vh;
+
+    background:#fff;
+
+    overflow-y:auto;
+
+    box-shadow:-10px 0 35px rgba(0,0,0,.15);
+
+    animation:slideIn .25s ease;
+
+}
+
+
+
+/* ===============================
+   Modal Container
+================================ */
+
+
+.detail{
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:100%;
+
+    background:#fff;
+
+}
+
+
+
+/* ===============================
+   Header
+================================ */
+
+
+.d-head{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:24px;
+
+    border-bottom:1px solid #eee;
+
+    position:sticky;
+
+    top:0;
+
+    background:#fff;
+
+    z-index:10;
+
+}
+
+
+.d-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+
+.d-title h2{
+
+    margin:4px 0 0;
+
+    font-size:24px;
+
+}
+
+
+
+.org-logo{
+
+    width:52px;
+
+    height:52px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+}
+
+
+
+.btn.sm{
+
+    border:none;
+
+    background:#f4f4f4;
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+}
+
+
+.btn.sm:hover{
+
+    background:#ececec;
+
+}
+
+
+
+/* ===============================
+   Hero Image
+================================ */
+
+
+.hero{
+
+    padding:24px;
+
+}
+
+
+.hero img{
+
+    width:100%;
+
+    border-radius:16px;
+
+    display:block;
+
+}
+
+
+
+/* ===============================
+   KPI
+================================ */
+
+
+.d-kpi{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:16px;
+
+    padding:0 24px 24px;
+
+}
+
+
+
+.kpi-card{
+
+    background:#fafafa;
+
+    border:1px solid #ececec;
+
+    border-radius:14px;
+
+    padding:18px;
+
+}
+
+
+
+.kpi-card span{
+
+    display:block;
+
+    color:#999;
+
+    font-size:13px;
+
+}
+
+
+
+.kpi-card strong{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:24px;
+
+    color:var(--primary);
+
+}
+
+
+
+/* ===============================
+   Section Title
+================================ */
+
+
+.d-sec{
+
+    margin:0 24px 14px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+
+
+/* ===============================
+   Description
+================================ */
+
+
+.description{
+
+    margin:0 24px 24px;
+
+    padding:18px;
+
+    background:#fafafa;
+
+    border:1px solid #ececec;
+
+    border-radius:14px;
+
+    line-height:1.8;
+
+}
+
+
+
+/* ===============================
+   Info Grid
+================================ */
+
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+    padding:0 24px 24px;
+
+}
+
+
+
+.info-item{
+
+    border:1px solid #ececec;
+
+    border-radius:12px;
+
+    padding:16px;
+
+}
+
+
+
+.info-item span{
+
+    display:block;
+
+    color:#888;
+
+    margin-bottom:6px;
+
+}
+
+
+
+/* ===============================
+   Objectives
+================================ */
+
+
+.objectives{
+
+    margin:0 24px 24px;
+
+    padding-left:20px;
+
+}
+
+
+.objectives li{
+
+    margin:10px 0;
+
+}
+
+
+
+/* ===============================
+   Badge
+================================ */
+
+
+.badges{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    padding:0 24px 24px;
+
+}
+
+
+
+.badge{
+
+    background:#fff5eb;
+
+    color:var(--primary);
+
+    border:1px solid #ffc58d;
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+}
+
+
+
+/* ===============================
+   Timeline
+================================ */
+
+
+.timeline{
+
+    margin:0 24px 24px;
+
+}
+
+
+
+.timeline-item{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-bottom:14px;
+
+}
+
+
+
+.timeline-time{
+
+    width:70px;
+
+    color:#999;
+
+}
+
+
+
+.timeline-title{
+
+    flex:1;
+
+}
+
+
+
+/* ===============================
+   Budget
+================================ */
+
+
+.budget-table{
+
+    margin:0 24px 24px;
+
+}
+
+
+
+.budget-row{
+
+    margin-bottom:18px;
+
+}
+
+
+
+.progress{
+
+    margin-top:8px;
+
+    height:10px;
+
+    background:#ececec;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+
+
+.progress div{
+
+    height:100%;
+
+    background:var(--primary);
+
+}
+
+
+
+/* ===============================
+   Expense Table
+================================ */
+
+
+.table{
+
+    margin:0 24px 24px;
+
+    border:1px solid #ececec;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+}
+
+
+
+.table-row{
+
+    display:grid;
+
+    grid-template-columns:1fr auto;
+
+    padding:14px 18px;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+
+
+.table-row:last-child{
+
+    border-bottom:none;
+
+}
+
+
+
+.total{
+
+    background:#fafafa;
+
+    font-weight:bold;
+
+}
+
+
+
+/* ===============================
+   Activity Gallery
+================================ */
+
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:12px;
+
+    padding:0 24px 24px;
+
+}
+
+
+
+.gallery img{
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+}
+
+
+
+/* ===============================
+   Document
+================================ */
+
+
+.documents{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    padding:0 24px 24px;
+
+}
+
+
+
+.documents a{
+
+    text-decoration:none;
+
+    color:#0066cc;
+
+}
+
+
+
+/* ===============================
+   Link Button
+================================ */
+
+
+.links{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    padding:0 24px 24px;
+
+}
+
+
+
+.links a{
+
+    text-decoration:none;
+
+    background:#f4f4f4;
+
+    padding:10px 16px;
+
+    border-radius:10px;
+
+    color:#333;
+
+}
+
+
+
+/* ===============================
+   Status
+================================ */
+
+
+.status-card{
+
+    margin:0 24px 24px;
+
+    border:1px solid #ececec;
+
+    border-radius:12px;
+
+    padding:18px;
+
+}
+
+
+
+.status-card strong{
+
+    display:block;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.status-bar{
+
+    height:12px;
+
+    background:#ececec;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+}
+
+
+
+.status-bar div{
+
+    height:100%;
+
+    background:#28a745;
+
+}
+
+
+
+/* ===============================
+   Footer
+================================ */
+
+
+.d-footer{
+
+    margin-top:auto;
+
+    padding:24px;
+
+    border-top:1px solid #ececec;
+
+    color:#888;
+
+    text-align:center;
+
+}
+
+
+
+/* ===============================
+   Modal Gallery Extra
+================================ */
+
+
+.dm-gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.dm-gallery-item{
+
+    background:#fff;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    border:1px solid #ddd;
+
+}
+
+
+
+.dm-gallery-item img{
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+
+.dm-gallery-item div{
+
+    padding:10px;
+
+    font-size:14px;
+
+    text-align:center;
+
+}
+
+
+
+/* ===============================
+   Scrollbar
+================================ */
+
+
+.modal-sheet::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+.modal-sheet::-webkit-scrollbar-thumb{
+
+    background:#c9c9c9;
+
+    border-radius:99px;
+
+}
+
+
+
+/* ===============================
+   Animation
+================================ */
+
+
+@keyframes slideIn{
+
+    from{
+
+        transform:translateX(100%);
+
+    }
+
+
+    to{
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+
+/* ===============================
+   Responsive
+================================ */
+
+
+@media(max-width:768px){
+
+
+    .modal-sheet{
+
+        width:100%;
+
+    }
+
+
+    .d-kpi{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .dm-gallery{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+@media(max-width:480px){
+
+
+    .dm-gallery{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+}

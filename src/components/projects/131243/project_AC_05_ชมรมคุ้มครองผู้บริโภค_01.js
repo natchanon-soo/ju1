@@ -1,0 +1,36 @@
+const project_AC_05_01 = {
+
+    id: "project_AC_05_01",
+    type: "null",
+    name: "null",
+    budget: {
+
+        // องค์กรเสนอ
+        proposed: {
+            amount: 0
+        },
+
+        // องค์การนักศึกษาพิจารณา null,
+        studentOrg: {
+            amount: 0
+        },
+
+        // สภานักศึกษาพิจารณา
+        studentCouncil: {
+            amount: 0
+        },
+
+        // งบจัดสรร
+        allocated: {
+            amount: 0
+        },
+
+        // ใช้จริง
+        actual: {
+            amount: 0
+        },
+    }
+
+};
+
+export default project_AC_05_01;

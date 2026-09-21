@@ -1,0 +1,155 @@
+/* =====================================================
+   DIRECTORY
+   SDGs
+===================================================== */
+
+
+/* ===============================
+   SDG GRID
+================================ */
+
+.dm-sdg-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 12px;
+
+    width: 100%;
+
+}
+
+
+/* ===============================
+   SDG ITEM
+================================ */
+
+.dm-sdg-item {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: contain;
+
+    display: block;
+
+    cursor: pointer;
+
+    border-radius: 8px;
+
+    transition:
+        transform .16s ease,
+        opacity .16s ease,
+        filter .16s ease;
+
+}
+
+
+/* ===============================
+   ACTIVE
+   SDG ที่เลือก
+================================ */
+
+.dm-sdg-item.active {
+
+    opacity: 1;
+
+    filter: saturate(150%);
+
+}
+
+
+/* ===============================
+   INACTIVE
+   SDG ที่ไม่ได้เลือก
+================================ */
+
+.dm-sdg-item.inactive {
+
+    opacity: .20;
+
+    filter: grayscale(10%);
+
+}
+
+
+/* ===============================
+   HOVER
+================================ */
+
+.dm-sdg-item:hover {
+
+    transform: scale(1.02);
+
+}
+
+
+/* ===============================
+   ACTIVE HOVER
+================================ */
+
+.dm-sdg-item.active:hover {
+
+    opacity: 1;
+
+    filter: saturate(170%);
+
+}
+
+
+/* ===============================
+   INACTIVE HOVER
+================================ */
+
+.dm-sdg-item.inactive:hover {
+
+    opacity: .45;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .dm-sdg-grid {
+
+        grid-template-columns:
+            repeat(5, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .dm-sdg-grid {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 10px;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .dm-sdg-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 8px;
+
+    }
+
+}

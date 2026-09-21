@@ -1,0 +1,157 @@
+/* =====================================================
+   DETAIL MODAL
+   ASSESSMENT
+===================================================== */
+
+
+/* ===============================
+   ASSESSMENT
+================================ */
+
+.dm-assessment {
+    margin-bottom: 28px;
+}
+
+
+/* ===============================
+   EVALUATOR
+================================ */
+
+.dm-assessment-evaluator {
+    margin: 0 0 10px;
+    font-weight: 700;
+    line-height: 1.7;
+    padding-left: 20px;
+}
+
+
+/* ===============================
+   ASSESSMENT DESCRIPTION
+================================ */
+
+.dm-assessment-description {
+    margin: 0 0 12px;
+    line-height: 1.7;
+    text-indent: 2em;
+    text-align: left;
+    padding-left: 20px;
+}
+
+
+/* ===============================
+   ASSESSMENT LIST
+================================ */
+
+/* ===============================
+   ASSESSMENT LIST
+================================ */
+
+.dm-assessment .dm-assessment-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.dm-assessment .dm-assessment-list li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.dm-assessment .dm-assessment-list li:last-child {
+    margin-bottom: 0;
+}
+
+.dm-assessment {
+    margin: 15px 10px 0px;
+    background: #fafafa;
+    padding: 20px 20px;
+    border-radius: 12px;
+}
+
+
+/* =====================================================
+   ASSESSMENT
+   Rubric Table
+===================================================== */
+
+
+/* ===============================
+   Rubric Table
+================================ */
+
+.dm-rubric-table {
+
+    width: 96%;
+
+    margin: 12px auto 0;
+
+    border-collapse: collapse;
+
+    font-size: 13px;
+
+}
+
+
+.dm-rubric-table th,
+.dm-rubric-table td {
+
+    border: 1px solid #ddd;
+
+    padding: 6px 8px;
+
+    text-align: center;
+
+}
+
+
+.dm-rubric-table td:nth-child(2) {
+
+    text-align: left;
+
+}
+
+
+.dm-rubric-table td:last-child,
+.dm-rubric-table th:last-child {
+
+    text-align: center;
+
+}
+
+
+.dm-rubric-table td:last-child strong {
+
+    display: block;
+
+    width: 100%;
+
+    text-align: center;
+
+}
+
+/* =====================================================
+   Activity / Rubric Tables
+===================================================== */
+
+.dm-activity-table {
+
+    width: 96%;
+
+    margin: auto;
+
+    border-collapse: collapse;
+
+    font-size: 13px;
+
+}
+
+
+.dm-activity-table th,
+.dm-activity-table td {
+
+    border: 1px solid #ddd;
+
+    padding: 6px 8px;
+
+    text-align: center;
+
+}

@@ -1,0 +1,249 @@
+/* =====================================================
+   DETAIL MODAL
+   SCHEDULE
+===================================================== */
+
+
+/* ===============================
+   SCHEDULE SECTION
+================================ */
+
+.dm-schedule-section {
+    margin-bottom: 28px;
+}
+
+
+/* ===============================
+   SCHEDULE DAY
+================================ */
+
+.dm-schedule-day {
+    margin-bottom: 20px;
+}
+
+
+/* ===============================
+   SCHEDULE DAY HEADER
+================================ */
+
+.dm-schedule-day-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-bottom: 10px;
+    padding: 12px 16px;
+
+
+    border: 1px solid #e2e6eb;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* ===============================
+   HEADER HOVER
+================================ */
+
+.dm-schedule-day-header:hover {
+    background: #eee;
+
+    border-color: #eee;
+
+
+}
+
+
+/* ===============================
+   SCHEDULE DATE
+================================ */
+
+.dm-schedule-date {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #263238;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.dm-schedule-day-header:hover .dm-schedule-date {
+    color: #ffffff;
+}
+
+
+/* ===============================
+   IMAGE LINK
+================================ */
+
+.dm-schedule-image-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-left: auto;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #6b7280;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.dm-schedule-day-header:hover .dm-schedule-image-link {
+    color: #ffffff;
+}
+
+
+/* ===============================
+   SCHEDULE LIST
+================================ */
+
+.dm-schedule-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+}
+
+
+/* ===============================
+   SCHEDULE ROW
+================================ */
+
+.dm-schedule-row {
+    display: grid;
+
+    grid-template-columns: 140px 1fr;
+
+    gap: 15px;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+.dm-schedule-row:last-child {
+    border-bottom: none;
+}
+
+
+/* ===============================
+   TIME
+================================ */
+
+.dm-schedule-row strong {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #334155;
+}
+
+
+/* ===============================
+   ACTIVITY
+================================ */
+
+.dm-schedule-row span {
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #475569;
+}
+
+
+/* =====================================================
+   SCHEDULE IMAGE PREVIEW
+===================================================== */
+
+.dm-schedule-image-panel {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+
+    z-index: 9999;
+
+    width: 220px;
+    max-height: 70vh;
+
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    box-sizing: border-box;
+
+    border-radius: 12px;
+
+
+    overflow-y: auto;
+
+    opacity: 0;
+    transform: translateY(12px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.dm-schedule-image-panel.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dm-schedule-image-panel.hide {
+    opacity: 0;
+    transform: translateY(2px);
+    pointer-events: none;
+}
+/* ===============================
+   PREVIEW IMAGE
+================================ */
+
+.dm-schedule-image-panel img {
+    display: block;
+
+    width: 100%;
+
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+
+.dm-schedule-section h3 {
+    font-size: 20px;
+    margin: 0 0 15px;
+    padding-left: 12px;
+    border-left: 5px solid #333;
+}

@@ -1,0 +1,165 @@
+/* =====================================================
+   DETAIL MODAL
+   BUDGET
+===================================================== */
+
+
+/* ===============================
+   BUDGET SECTION
+================================ */
+
+.dm-budget-section {
+    margin-bottom: 28px;
+}
+
+
+/* ===============================
+   BUDGET TABLE CARD
+================================ */
+
+.dm-budget-section .dm-table-card {
+
+    background: #fff;
+
+    border: 1px solid #eee;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 3px 15px rgba(0, 0, 0, .06);
+
+}
+
+
+/* ===============================
+   BUDGET CARD HEADER
+================================ */
+
+.dm-budget-section .dm-table-card h4 {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 0 0 12px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+
+.dm-budget-section .dm-table-card h4 span {
+
+    font-weight: bold;
+
+    margin-left: auto;
+
+    padding-right: 11px;
+
+    font-size: 16px;
+
+}
+
+
+/* ===============================
+   BUDGET TABLE
+================================ */
+
+.dm-budget-section .dm-table-card table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+.dm-budget-section .dm-table-card td {
+
+    padding: 12px;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+
+.dm-budget-section .dm-table-card tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+
+.dm-budget-section .dm-table-card td:first-child {
+
+    width: 70%;
+
+    font-weight: 600;
+
+}
+
+
+.dm-budget-section .dm-table-card td:last-child {
+
+    text-align: right;
+
+    white-space: nowrap;
+
+    font-weight: 400;
+
+}
+
+
+/* ===============================
+   BUDGET TOTAL
+================================ */
+
+.dm-budget-total {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 18px;
+
+    padding: 16px 20px;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+}
+
+
+.dm-budget-total span {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #475569;
+
+}
+
+
+.dm-budget-total strong {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: #1e293b;
+
+}

@@ -1,0 +1,88 @@
+/* =====================================================
+   Summary
+===================================================== */
+
+.dm-summary {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   Budget Card
+===================================================== */
+
+.dm-budget-card {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr 1fr 1.1fr 0.8fr;
+    align-items: center;
+    column-gap: 25px;
+
+    padding: 16px 20px;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   Budget Title
+===================================================== */
+
+.dm-budget-title {
+    color: #888;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   Budget Item
+===================================================== */
+
+.dm-budget-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.dm-budget-item small {
+    color: #94a3b8;
+    font-size: 11px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.dm-budget-item > div {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.dm-budget-item strong {
+    color: #1e293b;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-right: 2px;
+}
+
+.dm-budget-item em {
+    color: #94a3b8;
+    font-size: 14px;
+    font-style: normal;
+}
+
+
+/* =====================================================
+   Remaining / Percent
+===================================================== */
+
+.dm-budget-remaining strong {
+    color: #2563eb;
+}
+
+.dm-budget-percent strong {
+    color: #16a34a;
+}

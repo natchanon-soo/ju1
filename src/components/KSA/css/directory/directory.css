@@ -1,0 +1,416 @@
+/* =====================================================
+   DIRECTORY MAPPING
+===================================================== */
+
+
+/* =====================================================
+   DIRECTORY BOX
+   OKRs / Approach / EGGS Identity
+===================================================== */
+
+.dm-directory-box {
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, .05);
+
+}
+
+
+/* =====================================================
+   DIRECTORY BOX TITLE
+===================================================== */
+
+.dm-directory-box > h4 {
+
+    margin: 0 0 15px;
+
+}
+
+
+/* =====================================================
+   DIRECTORY GRID
+   OKRs / APPROACH
+===================================================== */
+
+.dm-directory-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 0 12px;
+
+}
+
+
+/* =====================================================
+   FIXED GRID
+===================================================== */
+
+.dm-directory-grid.grid-2 {
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+}
+
+
+.dm-directory-grid.grid-3 {
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+}
+
+
+.dm-directory-grid.grid-4 {
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+}
+
+
+/* =====================================================
+   EGGS GROUP
+===================================================== */
+
+.dm-eggs-group {
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =====================================================
+   EGGS GROUP TITLE
+===================================================== */
+
+.dm-eggs-group h5 {
+
+    margin: 0 0 12px;
+
+    padding-bottom: 8px;
+
+    border-bottom:
+        2px solid #e5e7eb;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    color: #374151;
+
+}
+
+
+/* =====================================================
+   DIRECTORY ITEM
+===================================================== */
+
+.dm-directory-item {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 12px 14px;
+
+    margin-bottom: 10px;
+
+    border-radius: 14px;
+
+    border: 1px solid transparent;
+
+    background: #ffffff;
+
+    font-size: 13px;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        opacity .25s ease;
+
+    cursor: help;
+
+}
+
+
+/* =====================================================
+   ITEM LABEL
+===================================================== */
+
+.dm-directory-item strong {
+
+    min-width: 65px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   ITEM CONTENT
+===================================================== */
+
+.dm-directory-item p,
+.dm-directory-item span {
+
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   ACTIVE
+   เลือกแล้ว
+===================================================== */
+
+.dm-directory-item.active {
+
+    background:
+        linear-gradient(
+            135deg,
+            #dcfce7,
+            #bbf7d0
+        );
+
+    border-color: #22c55e;
+
+    color: #14532d;
+
+}
+
+
+/* =====================================================
+   ACTIVE LABEL
+===================================================== */
+
+.dm-directory-item.active strong {
+
+    color: #15803d;
+
+}
+
+
+/* =====================================================
+   INACTIVE
+   ไม่เลือก
+===================================================== */
+
+.dm-directory-item.inactive {
+
+    background: #f5f5f5;
+
+    border-color: #e5e7eb;
+
+    color: #9ca3af;
+
+    opacity: .7;
+
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.dm-directory-item:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =====================================================
+   INACTIVE HOVER
+===================================================== */
+
+.dm-directory-item.inactive:hover {
+
+    opacity: 1;
+
+    background: #eeeeee;
+
+}
+
+
+/* =====================================================
+   EGGS ITEM
+===================================================== */
+
+.dm-eggs-group .dm-directory-item {
+
+    background: #ffffff;
+
+}
+
+
+/* =====================================================
+   EGGS ACTIVE ITEM
+===================================================== */
+
+.dm-eggs-group .dm-directory-item.active {
+
+    background:
+        linear-gradient(
+            135deg,
+            #dcfce7,
+            #bbf7d0
+        );
+
+}
+
+
+/* =====================================================
+   EGGS INACTIVE ITEM
+===================================================== */
+
+.dm-eggs-group .dm-directory-item.inactive {
+
+    background: #f8f8f8;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .dm-directory-grid.grid-4 {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .dm-directory-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .dm-directory-grid.grid-2,
+    .dm-directory-grid.grid-3,
+    .dm-directory-grid.grid-4 {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .dm-directory-box {
+
+        padding: 14px;
+
+    }
+
+
+    .dm-directory-item {
+
+        padding: 10px;
+
+    }
+
+
+    .dm-directory-item strong {
+
+        min-width: 55px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .dm-directory-box {
+
+        padding: 12px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .dm-eggs-group {
+
+        padding: 12px;
+
+    }
+
+
+    .dm-directory-item {
+
+        gap: 8px;
+
+        padding: 9px 10px;
+
+    }
+
+
+    .dm-directory-item strong {
+
+        min-width: 45px;
+
+        font-size: 13px;
+
+    }
+
+
+    .dm-directory-item p,
+    .dm-directory-item span {
+
+        font-size: 12px;
+
+    }
+
+}

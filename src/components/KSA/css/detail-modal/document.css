@@ -1,0 +1,68 @@
+/* =====================================================
+   DETAIL MODAL
+   Document List / Document Links
+===================================================== */
+
+
+/* =====================================================
+   Document List
+===================================================== */
+
+.dm-document-list {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+}
+
+
+/* =====================================================
+   Document Button / Link
+===================================================== */
+
+.dm-button-link {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 12px;
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    font-weight: bold;
+
+    transition: .2s;
+
+}
+
+
+/* =====================================================
+   Hover
+===================================================== */
+
+.dm-button-link:hover {
+
+    transform: translateY(-1px);
+
+    opacity: 1;
+
+    background: #eeeeee;
+
+}

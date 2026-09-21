@@ -1,0 +1,2134 @@
+import "./DetailModal.css";
+import "./Mapping.css";
+import { useState, useRef } from "react";
+import { createPortal } from "react-dom";
+import descriptions from "./descriptions";
+/*
+const directoryDescriptions = {
+
+    OKR8:
+        "การประเมินด้วยการสอบวัดความรู้ เพื่อวัดความเข้าใจในองค์ความรู้หรือเนื้อหาที่เกี่ยวข้องตามเกณฑ์ที่กำหนด",
+    OKR9:
+        "การประเมินจากการสังเกตพฤติกรรม การปฏิบัติงาน หรือการมีส่วนร่วมของผู้เรียนในสถานการณ์จริง",
+    OKR10:
+        "การประเมินจากการจัดทำรายงาน เพื่อสะท้อนกระบวนการคิด วิเคราะห์ และการสรุปผลการเรียนรู้",
+    OKR11:
+        "การประเมินผ่านการนำเสนอผลงานหรือแนวคิด เพื่อวัดทักษะการสื่อสารและการถ่ายทอดองค์ความรู้",
+    OKR12:
+        "การประเมินจากชิ้นงานหรือผลงานที่แสดงถึงความสามารถในการประยุกต์ใช้ความรู้",
+    OKR72:
+        "การประเมินจากการเข้าร่วมกิจกรรมและการมีส่วนร่วมในการเรียนรู้จากประสบการณ์จริง",
+    OKR77:
+        "การประเมินจากการจัดกิจกรรม การวางแผน การบริหารจัดการ และการทำงานร่วมกับผู้อื่น",
+
+    // =================
+    // Approach
+    // =================
+
+    AP1:
+        "การประเมินด้วยการสอบวัดความรู้ เพื่อวัดความเข้าใจในองค์ความรู้หรือเนื้อหาที่เกี่ยวข้องตามเกณฑ์ที่กำหนด",
+    AP2:
+        "การประเมินจากการสังเกตพฤติกรรม การปฏิบัติงาน หรือการมีส่วนร่วมของผู้เรียนในสถานการณ์จริง",
+    AP3:
+        "การประเมินจากการจัดทำรายงาน เพื่อสะท้อนกระบวนการคิด วิเคราะห์ และการสรุปผลการเรียนรู้",
+    AP4:
+        "การประเมินผ่านการนำเสนอผลงานหรือแนวคิด เพื่อวัดทักษะการสื่อสารและการถ่ายทอดองค์ความรู้",
+    AP5:
+        "การประเมินจากชิ้นงานหรือผลงานที่แสดงถึงความสามารถในการประยุกต์ใช้ความรู้",
+    AP6:
+        "การประเมินจากการเข้าร่วมกิจกรรมและการมีส่วนร่วมในการเรียนรู้จากประสบการณ์จริง",
+    AP7:
+        "การประเมินจากการจัดกิจกรรม การวางแผน การบริหารจัดการ และการทำงานร่วมกับผู้อื่น",
+
+
+    // =================
+    // EGGS
+    // =================
+
+    E1:
+        "ความสามารถในการสร้างสรรค์แนวคิดใหม่ การคิดริเริ่ม และการพัฒนานวัตกรรม",
+    E2:
+        "ความสามารถด้านการบริหารจัดการ การวางแผน และการดำเนินงานให้บรรลุเป้าหมาย",
+    E3:
+        "ความรู้และทักษะด้านการบริหารการเงินและบัญชี",
+    E4:
+        "ความสามารถในการเป็นผู้นำ การตัดสินใจ และการบริหารทีม",
+    E5:
+        "ความสามารถด้านการตลาด การสร้างคุณค่า และการสื่อสารภาพลักษณ์",
+    E6:
+        "ความสามารถในการคิดวิเคราะห์ แก้ปัญหา และออกแบบแนวทางแก้ไขอย่างสร้างสรรค์",
+
+};*/
+
+function DetailModal({
+
+    project,
+
+    organization,
+
+    onClose
+
+}) {
+
+
+    if (!project) return null;
+
+
+    const detail = project.detail || {};
+
+
+
+    return (
+
+
+        <div
+
+            className="dm-backdrop"
+
+            onClick={onClose}
+
+        >
+
+
+
+            <div
+
+                className="dm-modal"
+
+                onClick={(e) => e.stopPropagation()}
+
+            >
+
+
+
+
+
+                {/* ================= HEADER ================= */}
+
+
+                <div className="dm-header">
+
+
+
+                    <div className="dm-title">
+
+
+
+                        <img
+
+                            src={organization.img}
+
+                            className="dm-logo"
+
+                            alt=""
+
+                        />
+
+
+
+                        <div>
+
+
+                            <small>
+
+                                {organization.organization}
+
+                            </small>
+
+
+
+                            <h2>
+
+                                {project.name}
+
+                            </h2>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                    <button
+
+                        className="dm-close"
+
+                        onClick={onClose}
+
+                    >
+
+                        ✕
+
+                    </button>
+
+
+
+                </div>
+
+
+
+
+
+
+
+                {/* ================= SUMMARY ================= */}
+
+
+
+                <div className="dm-summary">
+
+
+
+                    <div className="dm-card">
+
+
+                        <span>
+
+                            งบประมาณ
+
+                        </span>
+
+
+                        <strong>
+
+
+                            {project.budget
+
+                                ?.toLocaleString("th-TH")}
+
+                            {" "}บาท
+
+
+                        </strong>
+
+
+                    </div>
+
+
+
+
+
+
+
+                    <div className="dm-card">
+
+
+                        <span>
+
+                            ปีการศึกษา
+
+                        </span>
+
+
+                        <strong>
+
+                            {detail.year}
+
+                        </strong>
+
+
+                    </div>
+
+
+
+
+
+
+
+                    <div className="dm-card">
+
+
+                        <span>
+
+                            วันที่จัด
+
+                        </span>
+
+
+                        <strong>
+
+                            {detail.date}
+
+                        </strong>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+                {/* ================= IMAGE ================= */}
+
+
+
+                <Section
+
+                    title="รูปภาพกิจกรรม"
+
+                >
+
+
+
+                    <div className="dm-gallery">
+
+
+                        {
+
+
+                            detail.images?.gallery?.map(
+
+                                (image, index) => (
+
+
+                                    <div
+
+                                        className="dm-gallery-item"
+
+                                        key={index}
+
+                                    >
+
+
+                                        <img
+
+                                            src={image.src}
+
+                                            alt={image.title}
+
+                                        />
+
+
+                                    </div>
+
+
+
+                                )
+
+
+                            )
+
+
+                        }
+
+
+
+                    </div>
+
+
+
+
+
+
+                    {
+
+
+                        detail.images?.more &&
+
+
+                        <a
+
+                            className="dm-button-link"
+
+                            href={detail.images.more}
+
+                            target="_blank"
+
+                            rel="noreferrer"
+
+                        >
+
+                            📷 ดูรูปภาพเพิ่มเติม
+
+                        </a>
+
+
+                    }
+
+
+
+                </Section>
+
+
+
+
+
+
+
+
+
+
+                {/* ================= INFORMATION ================= */}
+
+
+
+                <Section
+
+                    title="ข้อมูลโครงการ"
+
+                >
+
+
+
+                    <Info
+
+                        label="สถานที่"
+
+                        value={detail.location}
+
+                    />
+
+
+
+                    <Info
+
+                        label="กลุ่มเป้าหมาย"
+
+                        value={detail.target}
+
+                    />
+
+
+
+                    <Info
+
+                        label="ผู้รับผิดชอบ"
+
+                        value={
+
+                            detail.staff?.join(", ")
+
+                        }
+
+                    />
+
+
+
+                </Section>
+
+
+
+
+
+
+
+
+                {/* ================= REASON ================= */}
+
+
+
+                <Section
+
+                    title="หลักการและเหตุผล"
+
+                >
+
+
+
+                    <p className="dm-text">
+
+
+                        {detail.reason}
+
+
+                    </p>
+
+
+
+                </Section>
+
+
+
+
+
+
+
+
+                {/* ================= OBJECTIVE ================= */}
+
+
+
+                <Section
+
+                    title="วัตถุประสงค์"
+
+                >
+
+
+
+                    <ol className="dm-list">
+
+
+                        {
+
+
+                            detail.objectives?.map(
+
+                                (item, index) => (
+
+
+                                    <li
+
+                                        key={index}
+
+                                    >
+
+                                        {item}
+
+                                    </li>
+
+
+                                )
+
+
+                            )
+
+
+                        }
+
+
+
+                    </ol>
+
+
+
+
+                </Section>
+
+
+
+
+
+
+
+
+                {/* ================= ACTIVITIES ================= */}
+
+<Section title="รายละเอียดกิจกรรม">
+
+{
+
+detail.activities?.map((activity,index)=>(
+
+<div
+    className="dm-activity-card"
+    key={index}
+>
+
+<h4>
+
+    {`4.${index + 1} ${activity.title}`}
+
+</h4>
+
+<p className="dm-activity-name">
+
+    {activity.name}
+
+</p>
+
+
+
+{/* ================= ตาราง Mapping ================= */}
+
+<table className="dm-activity-table">
+
+    <thead>
+
+        <tr>
+
+            <th>กิจกรรม</th>
+
+            <th>OKRs</th>
+
+            <th>SDGs</th>
+
+            <th>EGGS (Core)</th>
+
+            <th>K</th>
+
+            <th>S</th>
+
+            <th>A</th>
+
+            <th>Approach</th>
+
+            <th>EGGS (Sub)</th>
+
+            <th>K</th>
+
+            <th>S</th>
+
+            <th>A</th>
+
+            <th>Approach</th>
+
+            <th>ช่วงเวลา</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr>
+
+            <td>{activity.type}</td>
+
+            <td>{activity.okrs}</td>
+
+            <td>{activity.sdgs}</td>
+
+            <td>{activity.eggsCore}</td>
+
+            <td>{activity.ksaCore?.k}</td>
+
+            <td>{activity.ksaCore?.s}</td>
+
+            <td>{activity.ksaCore?.a}</td>
+
+            <td>{activity.approach}</td>
+
+            <td>{activity.eggsSub}</td>
+
+            <td>{activity.ksaSub?.k}</td>
+
+            <td>{activity.ksaSub?.s}</td>
+
+            <td>{activity.ksaSub?.a}</td>
+
+            <td>{activity.approachSub}</td>
+
+            <td>{activity.period}</td>
+
+        </tr>
+
+    </tbody>
+
+</table>
+
+
+{/* ================= Rubric ================= */}
+
+<h5 className="dm-rubric-title">
+
+    แนวทางการประเมิน (Approach)
+
+</h5>
+
+<table className="dm-rubric-table">
+
+    <thead>
+
+        <tr>
+
+            <th>แนวทางการประเมิน</th>
+
+            <th>วัดประเมินผลจาก</th>
+
+            <th>เกณฑ์การให้คะแนน</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {
+
+        activity.rubric?.map((item,i)=>(
+
+        <tr key={i}>
+
+            <td>
+
+                <strong>
+
+                    {item.code}
+
+                </strong>
+
+                {" "}
+
+                {item.name}
+
+            </td>
+
+            <td>
+
+                {item.evaluate}
+
+            </td>
+
+            <td>
+
+                {item.score} คะแนน
+
+            </td>
+
+        </tr>
+
+        ))
+
+        }
+
+        <tr>
+
+            <td
+
+                colSpan="2"
+
+                style={{
+
+                    textAlign:"right",
+
+                    fontWeight:"bold"
+
+                }}
+
+            >
+
+                รวม
+
+            </td>
+
+            <td>
+
+                <strong>
+
+                    100 คะแนน
+
+                </strong>
+
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>
+
+</div>
+
+))
+
+}
+
+</Section>
+
+
+
+                {/* ================= BUDGET ================= */}
+
+
+                <Section
+
+                    title="รายการงบประมาณ"
+
+                >
+
+
+
+                    {
+
+
+                        detail.budgetGroups?.map(
+
+                            (group, index) => (
+
+
+                                <div
+
+                                    className="dm-table-card"
+
+                                    key={index}
+
+                                >
+
+
+
+                                    <h4>
+
+
+                                        {group.title}
+
+
+
+                                        <span>
+
+                                            {" "}
+
+                                            {
+
+                                                group.total
+
+                                                    ?.toLocaleString("th-TH")
+
+                                            }
+
+
+                                            {" "}บาท
+
+
+                                        </span>
+
+
+                                    </h4>
+
+
+
+
+
+
+                                    <table>
+
+
+                                        <tbody>
+
+
+
+                                            {
+
+
+                                                group.items?.map(
+
+                                                    (item, i) => (
+
+
+                                                        <tr
+
+                                                            key={i}
+
+                                                        >
+
+
+                                                            <td>
+
+                                                                {item.name}
+
+                                                            </td>
+
+
+
+                                                            <td>
+
+
+                                                                {
+
+                                                                    item.amount
+
+                                                                        ?.toLocaleString("th-TH")
+
+                                                                }
+
+
+                                                                {" "}บาท
+
+
+                                                            </td>
+
+
+
+                                                        </tr>
+
+
+                                                    )
+
+
+                                                )
+
+
+                                            }
+
+
+
+                                        </tbody>
+
+
+                                    </table>
+
+
+
+                                </div>
+
+
+                            )
+
+
+                        )
+
+
+                    }
+
+
+
+
+                    <div
+
+                        className="dm-budget-total"
+
+                    >
+
+
+                        <span>
+
+                            รวมงบประมาณทั้งโครงการ
+
+                        </span>
+
+
+
+                        <strong>
+
+
+                            {
+
+                                detail.budgetGroups
+
+                                    ?.reduce(
+
+                                        (sum, group) =>
+
+                                            sum + group.total,
+
+                                        0
+
+                                    )
+
+                                    ?.toLocaleString("th-TH")
+
+                            }
+
+
+                            {" "}บาท
+
+
+                        </strong>
+
+
+                    </div>
+
+
+
+                </Section>
+
+
+
+
+
+
+
+
+
+                {/* ================= SCHEDULE ================= */}
+
+
+
+                <Section
+
+                    title="กำหนดการโครงการ"
+
+                >
+
+
+
+                    {
+
+
+                        detail.schedule?.map(
+
+                            (item, index) => (
+
+
+
+                                <div
+
+                                    className="dm-schedule-row"
+
+                                    key={index}
+
+                                >
+
+
+
+                                    <strong>
+
+                                        {item.time}
+
+                                    </strong>
+
+
+
+                                    <span>
+
+                                        {item.activity}
+
+                                    </span>
+
+
+
+                                </div>
+
+
+
+                            )
+
+
+                        )
+
+
+                    }
+
+
+
+                </Section>
+
+
+
+
+
+
+
+
+
+
+                {/* ================= DOCUMENT ================= */}
+
+
+
+                <Section
+
+                    title="เอกสารที่เกี่ยวข้อง"
+
+                >
+
+
+
+                    <div
+
+                        className="dm-document-list"
+
+                    >
+
+
+
+                        {
+
+
+                            detail.documents?.map(
+
+                                (doc, index) => (
+
+
+                                    <a
+
+                                        key={index}
+
+                                        className="dm-button-link"
+
+                                        href={doc.url}
+
+                                        target="_blank"
+
+                                        rel="noreferrer"
+
+                                    >
+
+
+                                        📄 {doc.name}
+
+
+                                    </a>
+
+
+
+                                )
+
+
+                            )
+
+                        }
+
+
+
+                    </div>
+
+
+
+                </Section>
+
+
+
+
+
+
+
+
+
+                {/* ================= EVALUATION ================= */}
+
+
+
+                <Section
+
+                    title="ตารางประเมินผลกิจกรรม"
+
+                >
+
+
+
+
+                    {
+
+
+                        detail.evaluation?.url &&
+
+
+                        <a
+
+                            className="dm-button-link"
+
+                            href={detail.evaluation.url}
+
+                            target="_blank"
+
+                            rel="noreferrer"
+
+                        >
+
+                            📊 เปิดตารางประเมินผลกิจกรรม
+
+
+                        </a>
+
+
+
+                    }
+
+
+
+
+                </Section>
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* =====================================================
+                    CHECK INDICATORS
+                ====================================================== */}
+
+
+
+                <Section
+
+                    title="ผลที่คาดว่าจะได้รับพร้อมตัวชี้วัดความสำเร็จ"
+
+                    className="dm-check-section"
+
+                >
+
+
+
+
+
+                    {
+
+
+                        detail.checkIndicators?.map(
+
+                            (item, index) => (
+
+
+
+                                <div
+
+
+                                    className={
+
+                                        `dm-kpi-row
+
+                        ${item.checked
+
+                                            ? "checked"
+
+                                            : "unchecked"}
+
+                        `
+
+                                    }
+
+
+                                    key={index}
+
+                                >
+
+
+
+
+
+                                    <span
+
+                                        className="dm-check-text"
+
+                                    >
+
+
+
+
+                                        <div
+
+                                            className="dm-check-okr"
+
+                                        >
+
+
+
+                                            {
+
+                                                item.checked
+
+                                                    ?
+
+                                                    "☑"
+
+                                                    :
+
+                                                    "☐"
+
+                                            }
+
+
+
+                                            {" "}
+
+
+                                            {item.okr}
+
+
+
+                                        </div>
+
+
+
+
+
+
+
+                                        <div
+
+                                            className="dm-check-kpi"
+
+                                        >
+
+                                            {descriptions.okrKpi[item.okr]?.kpi}
+
+
+                                        </div>
+
+
+
+
+                                    </span>
+
+
+
+
+
+
+
+                                    <strong
+
+                                        className="dm-check-target"
+
+                                    >
+
+                                        {descriptions.okrKpi[item.okr]?.target}
+
+
+                                    </strong>
+
+
+
+
+                                </div>
+
+
+
+                            )
+
+
+                        )
+
+
+
+                    }
+
+
+
+
+                </Section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* ================= DIRECTORY ================= */}
+
+
+
+                <Section title="Directory Mapping">
+
+                <DirectoryBox
+                    title="รูปแบบการจัดกิจกรรม"
+                    icon="📋"
+                    grid="grid-2"
+                    items={detail.directory?.methods || []}
+                />
+
+                <DirectoryBox
+                    title="OKRs"
+                    grid="grid-2"
+                    icon="🎯"
+                    items={detail.directory?.okrs || []}
+                />
+
+                <DirectoryBox
+                    title="Approach"
+                    grid="grid-4"
+                    icon="📝"
+                    items={detail.directory?.approach || []}
+                />
+
+                <DirectoryBox
+                    title="KSA Model"
+                    icon="📚"
+                >
+                    {
+
+                        Object.entries(detail.directory?.ksa || {}).map(
+                            ([key, group]) => (
+
+                                <div
+                                    className="dm-eggs-group"
+                                    key={key}
+                                >
+
+                                    <h5>{group.title}</h5>
+
+                                    <div className="dm-directory-grid grid-3">
+
+                                        {
+
+                                            group.items?.map((item, index) => (
+
+                                                <DirectoryItem
+                                                    key={index}
+                                                    item={item}
+                                                />
+
+                                            ))
+
+                                        }
+
+                                    </div>
+
+                                </div>
+
+                            )
+                        )
+
+                    }
+
+                </DirectoryBox>
+
+
+                    {/* EGGS เป็น Object */}
+
+
+
+                    <div className="dm-directory-box">
+
+
+
+                        <h4>
+
+                            🐣 EGGS Identity
+
+                        </h4>
+
+
+
+
+
+                        {
+
+
+                            Object.entries(
+
+                                detail.directory?.eggs || {}
+
+                            )
+
+                                .map(
+
+                                    ([key, group]) => (
+
+
+                                        <div className="dm-eggs-group">
+
+                                            <h5>{group.title}</h5>
+
+
+                                            <div className="dm-directory-grid grid-3">
+
+                                                {
+                                                    group.items?.map(
+                                                        (item, index) => (
+                                                            <DirectoryItem
+                                                                key={index}
+                                                                item={item}
+                                                            />
+                                                        )
+                                                    )
+                                                }
+
+                                            </div>
+
+                                        </div>
+
+
+                                    )
+
+
+                                )
+
+
+
+                        }
+
+
+
+
+                    </div>
+
+
+
+
+
+                </Section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* ================= KPI PERFORMANCE ================= */}
+
+
+
+                <Section
+
+                    title="ตัวชี้วัดความสำเร็จ"
+
+                >
+
+
+
+                    <KpiResult
+
+                        items={
+
+                            detail.performanceKpi || []
+
+                        }
+
+                    />
+
+
+
+                </Section>
+
+
+
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+    );
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =================================================
+
+    COMPONENTS
+
+================================================= */
+
+
+
+
+
+
+
+function Section({
+
+    title,
+
+    children,
+
+    className = ""
+
+}) {
+
+
+    return (
+
+
+        <section
+
+            className={
+
+                `dm-section ${className}`
+
+            }
+
+        >
+
+
+
+            <h3>
+
+                {title}
+
+            </h3>
+
+
+
+            {children}
+
+
+
+        </section>
+
+
+    );
+
+
+}
+
+
+
+
+
+
+
+
+
+function Info({
+
+    label,
+
+    value
+
+}) {
+
+
+    return (
+
+
+        <div
+
+            className="dm-info"
+
+        >
+
+
+
+            <span>
+
+                {label}
+
+            </span>
+
+
+
+            <strong>
+
+                {value}
+
+            </strong>
+
+
+
+        </div>
+
+
+    );
+
+
+}
+
+
+
+
+
+
+function DirectoryItem({ item }) {
+
+    const hideTimer = useRef(null);
+
+    const [showTooltip, setShowTooltip] = useState(false);
+
+
+    const [tooltip, setTooltip] = useState({
+
+        visible: false,
+        x: 0,
+        y: 0
+
+    });
+
+    const handleMouseEnter = (e) => {
+
+    if (!descriptions[item.code]) return;
+
+    // ถ้ามีการนับเวลาปิดอยู่ ยกเลิกก่อน
+    clearTimeout(hideTimer.current);
+
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    setTooltip({
+
+        visible: true,
+
+        x: rect.left - 370,
+
+        y: rect.top - 60 + rect.height / 2
+
+    });
+
+};
+
+    const handleMouseLeave = () => {
+
+    hideTimer.current = setTimeout(() => {
+
+        setTooltip(prev => ({
+            ...prev,
+            visible: false
+        }));
+
+    }, 20);
+
+};
+
+const handleTooltipEnter = () => {
+
+    clearTimeout(hideTimer.current);
+
+};
+
+const handleTooltipLeave = () => {
+
+    setTooltip(prev => ({
+        ...prev,
+        visible: false
+    }));
+
+};
+
+    return (
+
+        <>
+
+            <div
+
+        className={
+
+            `dm-directory-item
+            ${item.checked ? "active" : "inactive"}
+            `
+
+        }
+
+        onMouseEnter={handleMouseEnter}
+
+        onMouseLeave={handleMouseLeave}
+
+    >
+
+                <strong>
+
+                    {item.checked ? "☑" : "☐"} {item.code}
+
+                </strong>
+
+                <p>{item.name}</p>
+
+            </div>
+
+            {
+
+                tooltip.visible &&
+
+                createPortal(
+
+                    <div
+    className="dm-tooltip-portal"
+
+    onMouseEnter={handleTooltipEnter}
+
+    onMouseLeave={handleTooltipLeave}
+
+    style={{
+
+        left: tooltip.x,
+
+        top: tooltip.y
+
+    }}
+>
+
+                        {descriptions[item.code]}
+
+                    </div>,
+
+                    document.body
+
+                )
+
+            }
+
+        </>
+
+    );
+
+}
+
+
+
+
+
+
+function DirectoryBox({
+
+    title,
+
+    items=[],
+
+    children,
+
+    grid="grid-2",
+
+    icon
+
+}){
+
+    return(
+
+        <div className="dm-directory-box">
+
+            <h4>{icon} {title}</h4>
+
+            {
+
+                children ?
+
+                children
+
+                :
+
+                <div className={`dm-directory-grid ${grid}`}>
+
+                    {
+
+                        items.map((item,index)=>(
+
+                            <DirectoryItem
+                                key={index}
+                                item={item}
+                            />
+
+                        ))
+
+                    }
+
+                </div>
+
+            }
+
+        </div>
+
+    )
+
+}
+
+
+
+
+
+
+
+function KpiResult({
+
+    items = []
+
+}) {
+
+
+    return (
+
+
+
+        <>
+
+
+            {
+
+
+                items.map(
+
+                    (item, index) => {
+
+
+                        const percent =
+
+
+                            item.target
+
+                                ?
+
+                                (item.actual / item.target) * 100
+
+                                :
+
+                                0;
+
+
+
+                        const width =
+
+                            Math.min(percent, 100);
+
+
+
+
+
+                        return (
+
+
+                            <div
+
+
+                                key={index}
+
+
+                                className={
+
+
+                                    `
+
+dm-performance-card
+
+${percent >= item.goal
+
+                                        ?
+
+                                        "success"
+
+                                        :
+
+                                        "warning"
+
+                                    }
+
+`
+
+                                }
+
+
+                            >
+
+
+
+
+
+
+
+                                <div
+
+                                    className="dm-performance-header"
+
+                                >
+
+
+
+                                    <span>
+
+
+                                        {item.name}
+
+
+                                    </span>
+
+
+
+                                    <strong>
+
+
+                                        {percent.toFixed(2)}%
+
+
+                                    </strong>
+
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <div
+
+                                    className="dm-progress"
+
+                                >
+
+
+
+                                    <div
+
+
+                                        className="dm-progress-bar"
+
+
+                                        style={{
+
+                                            width: `${width}%`
+
+                                        }}
+
+
+                                    />
+
+
+
+
+
+                                    <div
+
+
+                                        className="dm-progress-target"
+
+
+                                        style={{
+
+                                            left: `${item.goal}%`
+
+                                        }}
+
+
+                                    />
+
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <div
+
+                                    className="dm-performance-detail"
+
+                                >
+
+
+
+                                    <span>
+
+
+                                        เป้าหมาย :
+
+                                        {" "}
+
+                                        {
+
+                                            item.target
+
+                                                ?.toLocaleString("th-TH")
+
+                                        }
+
+
+
+                                        {" "}
+
+
+                                        {item.unit}
+
+
+
+                                    </span>
+
+
+
+
+
+
+
+                                    <span>
+
+
+                                        จริง :
+
+                                        {" "}
+
+                                        {
+
+                                            item.actual
+
+                                                ?.toLocaleString("th-TH")
+
+                                        }
+
+
+
+                                        {" "}
+
+
+                                        {item.unit}
+
+
+
+                                    </span>
+
+
+
+
+
+                                </div>
+
+
+
+
+
+
+
+                                <small>
+
+
+                                    วิธีประเมิน :
+
+                                    {" "}
+
+                                    {item.method}
+
+
+
+                                </small>
+
+
+
+
+
+
+                            </div>
+
+
+                        )
+
+
+
+                    }
+
+
+                )
+
+
+            }
+
+
+        </>
+
+
+
+    )
+
+
+
+}
+
+
+
+
+
+
+
+
+export default DetailModal;

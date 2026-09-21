@@ -1,0 +1,1036 @@
+/* =========================================================
+   KSA SCORE CARD
+========================================================= */
+
+.dm-ksa-score-list {
+    display: grid;
+    gap: 16px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.dm-ksa-score-card {
+    padding-top: 20px;
+    border-top: 1px solid #eef0f3;
+    border-bottom: 1px solid #eef0f3;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.dm-ksa-score-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+}
+
+
+.dm-ksa-score-title {
+    display: flex;
+    align-items: baseline;
+
+    gap: 10px;
+}
+
+
+.dm-ksa-score-title strong {
+    font-size: 18px;
+    font-weight: 800;
+
+    color: #111827;
+}
+
+
+.dm-ksa-score-title span {
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   SCORE RESULT
+========================================================= */
+
+.dm-ksa-score-result {
+    display: flex;
+    align-items: baseline;
+
+    gap: 4px;
+
+    white-space: nowrap;
+}
+
+
+.dm-ksa-score-result strong {
+    font-size: 18px;
+    font-weight: 800;
+
+    color: #111827;
+}
+
+
+.dm-ksa-score-result span {
+    font-size: 14px;
+
+    color: #64748b;
+}
+
+
+.dm-ksa-score-result small {
+    margin-left: 8px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #475569;
+}
+
+
+/* =========================================================
+   NO SCORE
+========================================================= */
+
+.dm-ksa-no-score {
+    font-size: 12px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   CHART
+========================================================= */
+
+.dm-ksa-chart-new {
+    padding: 12px 10px 28px;
+}
+
+
+/* =========================================================
+   CHART SCALE
+========================================================= */
+
+.dm-ksa-chart-scale {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    padding: 0 4px;
+
+    font-size: 11px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   CHART TRACK
+========================================================= */
+
+.dm-ksa-chart-track-new {
+    position: relative;
+
+    height: 6px;
+
+    background: #e5e7eb;
+
+    border-radius: 999px;
+        margin-bottom: 50px;
+}
+
+
+/* =========================================================
+   SCORE RANGE
+========================================================= */
+
+.dm-ksa-range-new {
+    position: absolute;
+
+    top: 0;
+
+    height: 6px;
+
+    background: #cbd5e1;
+
+    border-radius: 999px;
+}
+
+
+/* =========================================================
+   STANDARD DEVIATION RANGE
+========================================================= */
+
+.dm-ksa-sd-range-new {
+    position: absolute;
+
+    top: -2px;
+
+    height: 10px;
+
+    background: #dbeafe;
+
+    border-radius: 999px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   MARKER
+========================================================= */
+
+.dm-ksa-marker-new {
+    position: absolute;
+
+    top: 50%;
+
+    width: 0;
+    height: 0;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   MARKER LABEL
+========================================================= */
+
+.dm-ksa-marker-label {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    white-space: nowrap;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   MARKER VALUE
+
+   ตัวเลขใต้จุด
+========================================================= */
+
+.dm-ksa-marker-new > strong {
+    position: absolute;
+
+    top: 14px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    white-space: nowrap;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    color: #1e293b;
+}
+
+
+/* =========================================================
+   MARKER DOT
+========================================================= */
+
+.dm-ksa-marker-dot {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 15px;
+    height: 15px;
+
+    transform: translate(-50%, -50%);
+
+    background: #ffffff;
+
+    border: 3px solid #94a3b8;
+
+    border-radius: 50%;
+
+    box-sizing: border-box;
+}
+
+
+.dm-ksa-marker-dot span {
+    width: 5px;
+    height: 5px;
+
+    background: #64748b;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   MIN
+========================================================= */
+
+.dm-ksa-marker-new.marker-min {
+    z-index: 2;
+}
+
+
+.dm-ksa-marker-new.marker-min
+.dm-ksa-marker-label {
+    top: -29px;
+}
+
+
+/* =========================================================
+   MEAN
+========================================================= */
+
+.dm-ksa-marker-new.marker-mean {
+    z-index: 3;
+}
+
+
+.dm-ksa-marker-new.marker-mean
+.dm-ksa-marker-label {
+    top: -29px;
+}
+
+
+/* =========================================================
+   MAX
+========================================================= */
+
+.dm-ksa-marker-new.marker-max {
+    z-index: 2;
+}
+
+
+.dm-ksa-marker-new.marker-max
+.dm-ksa-marker-label {
+    top: -29px;
+}
+
+
+/* =========================================================
+   SCORE
+========================================================= */
+
+.dm-ksa-marker-new.marker-score {
+    z-index: 10;
+}
+
+
+.dm-ksa-marker-new.marker-score .dm-ksa-marker-dot {
+    width: 17px;
+    height: 17px;
+
+    border: 3px solid #1e293b;
+}
+
+
+.dm-ksa-marker-new.marker-score
+.dm-ksa-marker-dot span {
+    width: 6px;
+    height: 6px;
+
+    background: #1e293b;
+}
+
+
+.dm-ksa-marker-new.marker-score
+.dm-ksa-marker-label {
+    top: 7px;
+
+    color: #111827;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   SCORE MARKER VALUE
+
+   คะแนนของ Score
+========================================================= */
+
+.dm-ksa-marker-new.marker-score > strong {
+    position: absolute;
+
+    top: 27px;
+
+    white-space: nowrap;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    color: #1e293b;
+}
+
+
+/* =========================================================
+   MARKER LEGEND
+========================================================= */
+
+.dm-ksa-marker-legend {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-top: 22px;
+
+    padding: 9px 12px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+}
+
+
+.dm-ksa-marker-legend > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    min-width: 0;
+
+    font-size: 10px;
+
+    color: #64748b;
+}
+
+
+.dm-ksa-marker-legend strong {
+    margin-left: auto;
+
+    font-size: 11px;
+
+    color: #111827;
+}
+
+
+/* =========================================================
+   LEGEND DOT
+========================================================= */
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+
+    flex: 0 0 auto;
+
+    border-radius: 50%;
+}
+
+
+.min-dot {
+    background: #94a3b8;
+}
+
+
+.mean-dot {
+    background: #a8b4c7;
+}
+
+
+.max-dot {
+    background: #64748b;
+}
+
+
+.score-dot {
+    background: #111827;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.dm-ksa-stat-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+
+    gap: 7px;
+
+    margin-top: 12px;
+}
+
+
+.dm-ksa-stat-grid > div {
+    min-width: 0;
+
+    padding: 9px 10px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e8edf3;
+
+    border-radius: 9px;
+
+    text-align: center;
+}
+
+
+.dm-ksa-stat-grid span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 9px;
+
+    color: #64748b;
+}
+
+
+.dm-ksa-stat-grid strong {
+    display: block;
+
+    font-size: 13px;
+    font-weight: 750;
+
+    color: #111827;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SCORE WEIGHT
+========================================================= */
+
+.dm-ksa-weight {
+    margin-top: 17px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #eef0f3;
+}
+
+
+/* =========================================================
+   WEIGHT HEADER
+========================================================= */
+
+.dm-ksa-weight-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 9px;
+}
+
+
+.dm-ksa-weight-header span {
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #64748b;
+}
+
+
+.dm-ksa-weight-header strong {
+    font-size: 13px;
+    font-weight: 750;
+
+    color: #111827;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   WEIGHT TRACK
+========================================================= */
+
+.dm-ksa-weight-track {
+    position: relative;
+
+    width: 100%;
+    height: 8px;
+
+    background: #e5e7eb;
+
+    border-radius: 999px;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   SCORE BAR
+========================================================= */
+
+.dm-ksa-weight-bar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    height: 100%;
+
+    max-width: 100%;
+
+    background: #65c174;
+
+    border-radius: 999px;
+
+    transition: width .3s ease;
+}
+
+
+/* =========================================================
+   SCORE MARKER
+   ตัวเลขคะแนน เช่น 30
+========================================================= */
+
+.dm-ksa-weight-score-marker {
+    position: absolute;
+
+    top: 50%;
+
+    width: 0;
+    height: 0;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SCORE MARKER LINE
+========================================================= */
+
+.dm-ksa-weight-score-marker::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: -10px;
+
+    width: 2px;
+    height: 20px;
+
+    background: #334155;
+
+    border-radius: 2px;
+}
+
+
+/* =========================================================
+   SCORE MARKER NUMBER
+========================================================= */
+
+.dm-ksa-weight-score-marker span {
+    position: absolute;
+
+    top: 14px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    white-space: nowrap;
+
+    font-size: 10px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #475569;
+}
+
+
+/* =========================================================
+   FULL SCORE LIMIT
+   เช่น K3 เต็ม 30 คะแนน
+========================================================= */
+.dm-ksa-weight-limit {
+    position: absolute;
+
+    top: -4px;
+
+    width: 2px;
+    height: 16px;
+
+    background: #334155;
+
+    border-radius: 2px;
+
+    transform: translateX(-50%);
+
+    z-index: 4;
+}
+
+/* คะแนนเต็มด้านล่างขีด */
+.dm-ksa-weight-limit span {
+    position: absolute;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    color: #94a3b8;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   WEIGHT SCALE
+========================================================= */
+
+.dm-ksa-weight-scale {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    height: 16px;
+
+    margin-top: 6px;
+
+    font-size: 10px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   SCORE NUMBER ON SCALE
+
+   ตำแหน่งจะตรงกับ score จริง
+
+   เช่น score = 30
+
+   0 ----------- 30 ----------------------------- 100
+                  ↑
+                 30
+========================================================= */
+
+.dm-ksa-weight-scale-score {
+    position: absolute;
+
+    top: 0;
+
+    transform: translateX(-50%);
+
+    white-space: nowrap;
+
+    font-size: 10px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #475569;
+}
+
+
+/* =========================================================
+   ANALYSIS
+========================================================= */
+
+.dm-ksa-analysis {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 7px;
+
+    margin-top: 14px;
+}
+
+
+/* =========================================================
+   ANALYSIS CARD
+========================================================= */
+
+.dm-ksa-analysis-card {
+    min-width: 0;
+
+    padding: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7ebf0;
+
+    border-radius: 9px;
+}
+
+
+/* =========================================================
+   ANALYSIS LABEL
+========================================================= */
+
+.dm-ksa-analysis-label {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 9px;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   ANALYSIS VALUE
+========================================================= */
+
+.dm-ksa-analysis-card strong {
+    display: block;
+
+    margin-bottom: 2px;
+
+    font-size: 12px;
+    font-weight: 750;
+
+    color: #111827;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   ANALYSIS DESCRIPTION
+========================================================= */
+
+.dm-ksa-analysis-card small {
+    display: block;
+
+    font-size: 9px;
+
+    line-height: 1.35;
+
+    color: #94a3b8;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.dm-ksa-summary {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 6px;
+
+    margin-bottom: 14px;
+
+    padding-top: 12px;
+
+    font-size: 11px;
+
+    color: #64748b;
+}
+
+
+.dm-ksa-summary strong {
+    color: #111827;
+
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.dm-ksa-empty {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 130px;
+
+    margin-top: 16px;
+
+    padding: 24px;
+
+    background: #f8fafc;
+
+    border: 1px dashed #cbd5e1;
+
+    border-radius: 14px;
+
+    text-align: center;
+}
+
+
+.dm-ksa-empty-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    margin-bottom: 8px;
+
+    border-radius: 50%;
+
+    background: #e2e8f0;
+
+    color: #64748b;
+
+    font-size: 18px;
+}
+
+
+.dm-ksa-empty strong {
+    margin-bottom: 4px;
+
+    font-size: 13px;
+
+    color: #334155;
+}
+
+
+.dm-ksa-empty span {
+    font-size: 11px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .dm-ksa-score-card {
+        padding-top: 16px;
+    }
+
+
+    .dm-ksa-stat-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .dm-ksa-analysis {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .dm-ksa-score-header {
+        align-items: flex-start;
+    }
+
+
+    .dm-ksa-score-result strong {
+        font-size: 25px;
+    }
+
+
+    .dm-ksa-marker-legend {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .dm-ksa-stat-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .dm-ksa-analysis {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .dm-ksa-score-header {
+        flex-direction: column;
+    }
+
+
+    .dm-ksa-score-result {
+        width: 100%;
+    }
+
+
+    .dm-ksa-chart-new {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+
+    .dm-ksa-stat-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}

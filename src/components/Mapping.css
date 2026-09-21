@@ -1,0 +1,500 @@
+/* =====================================================
+   DIRECTORY MAPPING
+===================================================== */
+
+
+/* ===============================
+   SECTION TITLE
+================================ */
+
+
+.dm-section h3{
+
+    font-size:20px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+/* ===============================
+   DIRECTORY BOX
+   OKRs / Approach / EGGS Identity
+================================ */
+
+
+.dm-directory-box{
+
+
+    background:#ffffff;
+
+
+    border:1px solid #e5e7eb;
+
+
+    border-radius:18px;
+
+
+    padding:18px;
+
+
+    margin-bottom:20px;
+
+
+    box-shadow:
+
+    0 4px 15px rgba(0,0,0,.05);
+
+
+}
+
+
+
+
+
+/* หัวข้อใหญ่ */
+
+.dm-directory-box > h4{
+
+
+    margin:0 0 15px;
+
+}
+
+
+
+
+
+/* ===============================
+   OKRs / APPROACH GRID
+================================ */
+
+
+.dm-directory-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(260px,1fr));
+
+
+    gap:0 12px;
+
+
+}
+
+
+
+/* ===============================
+   EGGS GROUP
+================================ */
+
+
+.dm-eggs-group{
+    border:1px solid #eeeeee;
+    border-radius:15px;
+    padding:15px;
+    margin-bottom:15px;
+
+}
+
+
+
+
+.dm-eggs-group h5{
+
+
+    margin:0 0 12px;
+
+
+    padding-bottom:8px;
+
+
+    border-bottom:
+
+    2px solid #e5e7eb;
+
+
+    font-size:15px;
+
+
+    font-weight:800;
+
+
+    color:#374151;
+
+
+}
+
+
+
+
+
+
+/* ===============================
+   ITEM CARD
+================================ */
+
+
+
+.dm-directory-item{
+
+
+    display:flex;
+
+
+    align-items:flex-start;
+
+
+    gap:10px;
+
+
+
+
+    font-size:13px;
+
+
+
+    padding:12px 14px;
+
+
+    margin-bottom:10px;
+
+
+    border-radius:14px;
+
+
+    border:1px solid transparent;
+
+
+    transition:.25s;
+}
+
+
+
+.dm-directory-item strong{
+
+
+    min-width:65px;
+
+
+    font-size:14px;
+
+
+    font-weight:800;
+
+
+    white-space:nowrap;
+
+
+}
+
+
+
+
+.dm-directory-item p,
+
+
+.dm-directory-item span{
+
+
+    margin:0;
+
+
+    font-size:13px;
+
+
+    line-height:1.6;
+
+
+}
+
+
+
+
+
+
+/* ===============================
+   ACTIVE : เลือกแล้ว
+================================ */
+
+
+.dm-directory-item.active{
+
+
+    background:
+
+
+    linear-gradient(
+
+        135deg,
+
+        #dcfce7,
+
+        #bbf7d0
+
+    );
+
+
+    border-color:#22c55e;
+
+
+    color:#14532d;
+
+
+}
+
+
+
+
+
+.dm-directory-item.active strong{
+
+
+    color:#15803d;
+
+
+}
+
+
+
+
+
+/* ===============================
+   INACTIVE : ไม่เลือก
+================================ */
+
+
+.dm-directory-item.inactive{
+
+
+    background:#f5f5f5;
+
+
+    border-color:#e5e7eb;
+
+
+    color:#9ca3af;
+
+
+    opacity:.7;
+
+
+}
+
+
+
+
+
+/* ===============================
+   HOVER
+================================ */
+
+
+.dm-directory-item:hover{
+
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+.dm-directory-item.inactive:hover{
+
+
+    opacity:1;
+
+
+    background:#eeeeee;
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   EGGS Layout
+================================ */
+
+
+.dm-eggs-group .dm-directory-item{
+
+
+    background:white;
+
+
+}
+
+
+
+
+
+.dm-eggs-group .dm-directory-item.active{
+
+
+    background:
+
+
+    linear-gradient(
+
+        135deg,
+
+        #dcfce7,
+
+        #bbf7d0
+
+    );
+
+
+}
+
+
+
+
+
+.dm-eggs-group .dm-directory-item.inactive{
+
+
+    background:#f8f8f8;
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   MOBILE
+================================ */
+
+
+@media(max-width:768px){
+
+
+    .dm-directory-grid{
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
+
+    .dm-directory-box{
+
+
+        padding:14px;
+
+
+    }
+
+
+
+    .dm-directory-item{
+
+
+        padding:10px;
+
+
+    }
+
+
+}
+
+
+.dm-directory-grid.grid-2 {
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+
+.dm-directory-grid.grid-3 {
+
+    grid-template-columns:1fr 1fr 1fr;
+
+}
+
+.dm-directory-grid.grid-4 {
+
+    grid-template-columns:1fr 1fr 1fr 1fr;
+
+}
+
+/**//**//* ===============================
+   Directory Tooltip
+================================ */
+
+.dm-directory-item{
+    position:relative;
+    cursor:help;
+}
+
+/* Tooltip (Portal) */
+
+.dm-tooltip-portal{
+
+    position:fixed;
+
+    width:340px;
+    max-width:340px;
+    max-height:420px;
+
+    padding:15px;
+
+    background:#fff;
+    color:#333;
+
+    border:1px solid #ddd;
+    border-radius:12px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+    font-size:13px;
+    line-height:1.7;
+    text-align:left;
+    white-space:pre-line;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    user-select:text;
+    cursor:text;
+
+    pointer-events:auto;
+
+    z-index:99999999;
+}
+
+/* Scrollbar */
+
+.dm-tooltip-portal::-webkit-scrollbar{
+    width:8px;
+}
+
+.dm-tooltip-portal::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:20px;
+}
+
+.dm-tooltip-portal::-webkit-scrollbar-thumb:hover{
+    background:#a9a9a9;
+}

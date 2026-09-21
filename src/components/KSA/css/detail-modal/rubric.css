@@ -1,0 +1,80 @@
+/* =====================================================
+   DETAIL MODAL
+   Rubric Level Table
+===================================================== */
+
+
+/* =====================================================
+   Rubric Level Table
+===================================================== */
+
+.dm-rubric-level-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 12px;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   Table Cell
+===================================================== */
+
+.dm-rubric-level-table th,
+.dm-rubric-level-table td {
+
+    border: 1px solid #d1d5db;
+
+    padding: 10px 14px;
+
+    text-align: center;
+
+}
+
+
+/* =====================================================
+   Table Header
+===================================================== */
+
+.dm-rubric-level-table th {
+
+    background: #f5f7fa;
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   Alternate Row
+===================================================== */
+
+.dm-rubric-level-table tbody tr:nth-child(even) {
+
+    background: #fafafa;
+
+}
+
+
+/* =====================================================
+   Rubric Note
+===================================================== */
+
+.dm-rubric-note {
+
+    margin-top: 12px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #555;
+
+    white-space: pre-line;
+
+}

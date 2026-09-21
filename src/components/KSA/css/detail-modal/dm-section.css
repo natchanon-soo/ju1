@@ -1,0 +1,69 @@
+/* =====================================================
+   DETAIL MODAL
+   SECTION
+===================================================== */
+
+
+/* ===============================
+   SECTION
+================================ */
+
+.dm-section {
+    margin-bottom: 28px;
+}
+
+.dm-section2 {
+    margin-bottom: 10px;
+}
+
+
+/* ===============================
+   SECTION TITLE
+================================ */
+
+.dm-section h3 {
+    font-size: 20px;
+    margin: 0 0 15px;
+    padding-left: 12px;
+    border-left: 5px solid #333;
+}
+
+
+/* ===============================
+   SECTION TEXT
+================================ */
+.dm-section .dm-text {
+    margin: 0;
+}
+
+
+.dm-section .dm-text p {
+    margin: 0 0 6px;
+    line-height: 1.7;
+    text-align: left;
+    text-indent: 4em;
+}
+
+.dm-section .dm-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ===============================
+   SECTION LIST
+================================ */
+
+.dm-section ul {
+    margin-top: 10px;
+}
+
+.dm-section li {
+    line-height: 1.8;
+}
+
+.dm-section .dm-text p {
+    margin: 0 0 6px;
+    line-height: 1.7;
+    text-align: left;
+}
+

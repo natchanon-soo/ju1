@@ -1,0 +1,3369 @@
+/* =====================================================
+   Detail Modal (Clean Version)
+   PART 1/3
+
+   - Modal
+   - Header
+   - Summary
+   - Section
+   - Text
+   - Info
+   - List
+   - Document
+===================================================== */
+
+
+/* =====================================================
+   Overlay
+===================================================== */
+
+.dm-backdrop {
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.45);
+
+    display: flex;
+    justify-content: flex-end;
+
+    z-index: 99;
+
+    backdrop-filter: blur(3px);
+
+}
+
+
+
+
+
+/* =====================================================
+   Modal Sheet
+===================================================== */
+
+
+.dm-modal {
+
+    width: min(800px,95vw);
+
+    height:100vh;
+
+    background:#fff;
+
+    overflow-y:auto;
+
+    padding:25px;
+
+    box-shadow:
+        -10px 0 35px rgba(0,0,0,.15);
+
+    animation:slideIn .25s ease;
+
+}
+
+
+
+
+@keyframes slideIn {
+
+    from {
+
+        transform:translateX(100%);
+
+    }
+
+
+    to {
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+
+
+
+/* Scrollbar */
+
+
+.dm-modal::-webkit-scrollbar {
+
+    width:8px;
+
+}
+
+
+
+.dm-modal::-webkit-scrollbar-thumb {
+
+    background:#c9c9c9;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+/* =====================================================
+   Header
+===================================================== */
+
+
+.dm-header {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    border-bottom:1px solid #eee;
+
+    padding-bottom:20px;
+
+    margin-bottom:20px;
+
+}
+
+.dm-title > div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.dm-title {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+
+
+
+
+.dm-logo {
+
+    width:65px;
+
+    height:65px;
+
+    object-fit:contain;
+
+}
+
+
+
+.dm-title small {
+    order: 2;
+    margin-top: 6px;
+    font-size: 14px;
+    color: #666;
+}
+
+
+
+.dm-title h2 {
+
+    margin:5px 0 0;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#222;
+
+}
+
+
+
+
+
+.dm-close {
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#f4f4f4;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+}
+
+
+
+.dm-close:hover {
+
+    background:#eee;
+
+}
+
+
+
+
+
+/* =====================================================
+   Hero Image
+===================================================== */
+
+
+.dm-cover-image {
+
+    width:100%;
+
+    max-height:450px;
+
+    object-fit:cover;
+
+    border-radius:16px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+/* =====================================================
+   Summary KPI
+===================================================== */
+
+
+.dm-summary {
+
+    display:grid;
+
+    grid-template-columns: 1fr 1fr 2fr;
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+.dm-card {
+
+    background:#fafafa;
+
+    border:1px solid #eee;
+
+    border-radius:14px;
+
+    padding:18px;
+
+}
+
+
+
+
+
+.dm-card span {
+
+    display:block;
+
+    color:#888;
+
+    font-size:14px;
+
+    margin-bottom:8px;
+
+}
+
+
+
+
+
+.dm-card strong {
+
+    font-size:22px;
+
+}
+
+
+
+
+
+/* =====================================================
+   Section
+===================================================== */
+
+
+
+
+
+
+
+.dm-section {
+
+    margin-bottom:28px;
+
+}
+
+
+
+
+
+.dm-section h3 {
+
+    font-size:20px;
+
+    margin-bottom:15px;
+
+    padding-left:12px;
+
+    border-left:5px solid #333;
+
+}
+
+
+
+
+
+/* =====================================================
+   Text
+===================================================== */
+
+
+.dm-text {
+
+    background:#fafafa;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    line-height:1.9;
+
+    color:#333;
+
+    white-space:pre-line;
+
+    text-align:justify;
+
+}
+
+
+
+
+
+/* =====================================================
+   Info
+===================================================== */
+
+
+.dm-info {
+
+    display:flex;
+
+    gap:20px;
+
+    padding:14px;
+
+    margin-bottom:10px;
+
+    background:#fafafa;
+
+    border-radius:10px;
+
+}
+
+
+
+
+
+.dm-info span {
+
+    width:180px;
+
+    color:#666;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+.dm-info strong {
+
+    flex:1;
+
+}
+
+
+
+
+
+/* =====================================================
+   List
+===================================================== */
+
+
+.dm-list {
+
+    background:#fafafa;
+
+    padding:20px 30px;
+
+    border-radius:12px;
+
+}
+
+
+
+
+
+.dm-list li {
+
+    margin-bottom:10px;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+/* =====================================================
+   Document
+===================================================== */
+
+
+.dm-document-list {
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:12px;
+
+}
+
+
+
+
+
+.dm-button-link {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:12px;
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    color:#333;
+
+    font-weight:bold;
+
+    transition:.2s;
+
+}
+
+
+
+
+
+.dm-button-link:hover {
+
+    transform:translateY(-1px);
+    opacity:1;
+    background:#eeeeee;
+}
+
+/* =====================================================
+   Detail Modal (Clean Version)
+   PART 2/3
+
+   - Table / Activity
+   - Budget
+   - Schedule
+   - Gallery
+   - Check KPI
+   - Performance KPI
+===================================================== */
+
+
+
+/* =====================================================
+   Table / Activity
+===================================================== */
+
+
+.dm-table-card {
+
+    background:#fff;
+
+    border:1px solid #eee;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    margin-bottom:15px;
+
+    box-shadow:
+
+        0 3px 15px rgba(0,0,0,.06);
+
+}
+
+
+
+
+
+.dm-table-card h4 {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:0 0 12px;
+
+    padding-bottom:10px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+
+
+
+.dm-table-card h4 span {
+
+    font-weight:bold;
+
+    margin-left:auto;
+
+    padding-right:11px;
+
+    font-size:16px;
+
+}
+
+
+
+
+
+.dm-table-card table {
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+
+
+
+.dm-table-card td {
+
+    padding:12px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+
+
+
+
+.dm-table-card tr:last-child td {
+
+    border-bottom:none;
+
+}
+
+
+
+
+
+.dm-table-card td:first-child {
+
+    width:70%;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+.dm-table-card td:last-child {
+
+    text-align:right;
+
+    white-space:nowrap;
+
+    font-weight:400;
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   Budget
+===================================================== */
+
+
+.dm-budget-total {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px;
+
+    background:#eee;
+
+    border-radius:14px;
+
+    margin-top:20px;
+
+}
+
+
+
+
+
+.dm-budget-total strong {
+
+    font-size:24px;
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   Schedule
+===================================================== */
+
+
+.dm-schedule {
+
+    border-left:3px solid #333;
+
+    padding-left:20px;
+
+}
+
+
+
+
+
+.dm-schedule-row {
+
+    display:flex;
+
+    gap:20px;
+
+    padding:15px;
+
+    margin-bottom:10px;
+
+    background:#fafafa;
+
+    border-radius:10px;
+
+}
+
+
+
+
+
+.dm-schedule-row strong {
+
+    min-width:150px;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   Gallery
+===================================================== */
+
+
+.dm-gallery {
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+
+
+.dm-gallery-item {
+
+    border:1px solid #ddd;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+.dm-gallery-item img {
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+.dm-gallery-item div {
+
+    padding:10px;
+
+    text-align:center;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   CHECK OKR KPI SECTION
+===================================================== */
+
+
+.dm-check-section {
+
+    padding-top:10px;
+
+}
+
+
+
+
+
+.dm-check-section h3 {
+
+    font-size:20px;
+
+    margin-bottom:15px;
+
+    padding-left:12px;
+
+    border-left:5px solid #333;
+
+}
+
+
+
+
+
+.dm-check-section .dm-kpi-row {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:12px 15px;
+
+    margin-bottom:10px;
+
+    border-radius:12px;
+
+    transition:.25s ease;
+
+}
+
+
+
+
+
+
+
+/* เลือกแล้ว */
+
+
+.dm-check-section .dm-kpi-row.checked {
+
+    background:#ffffff;
+
+    border:1px solid #d7e8ff;
+
+    box-shadow:
+
+        0 4px 12px rgba(0,0,0,.08);
+
+}
+
+
+
+
+
+
+
+/* ไม่เลือก */
+
+
+.dm-check-section .dm-kpi-row.unchecked {
+
+    background:#f5f5f5;
+
+    border:1px solid #e8e8e8;
+
+    opacity:.65;
+
+}
+
+
+
+
+
+.dm-check-section .dm-kpi-row:hover {
+
+    transform:translateY(-0.1px);
+
+    box-shadow:
+
+        0 5px 8px rgba(0,0,0,.12);
+
+}
+
+
+
+
+
+
+.dm-check-text {
+
+    flex:1;
+
+    line-height:1.5;
+
+}
+
+
+
+
+
+.dm-check-okr {
+
+    font-size:14px;
+
+    font-weight:700;
+
+    margin-bottom:4px;
+
+}
+
+
+
+
+
+.dm-check-kpi {
+
+    font-size:13px;
+
+    color:#555;
+
+}
+
+
+
+
+
+.dm-check-target {
+
+    min-width:220px;
+
+    max-width:260px;
+
+    text-align:right;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    line-height:1.5;
+
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   Performance KPI
+===================================================== */
+
+
+.dm-performance-card {
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+    border-radius:14px;
+
+    background:#f5f5f5;
+
+    border:1px solid #eee;
+
+}
+
+
+
+
+
+/* ผ่านเป้า */
+
+
+.dm-performance-card.success {
+
+    background:#f1fff5;
+
+    border-color:#b8e6c4;
+
+}
+
+
+
+
+
+
+/* ไม่ผ่าน */
+
+
+.dm-performance-card.warning {
+
+    background:#fff8ef;
+
+    border-color:#ffd8a8;
+
+}
+
+
+
+
+
+.dm-performance-header {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:12px;
+
+}
+
+
+
+
+
+.dm-performance-header span {
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+.dm-performance-header strong {
+
+    font-size:18px;
+
+}
+
+
+
+
+
+
+
+/* หลอด */
+
+.dm-progress {
+
+    height:14px;
+
+    background:#ddd;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+
+
+
+
+.dm-progress-bar {
+
+    height:100%;
+
+    background:#f59e0b;
+
+    border-radius:20px;
+
+    transition:.3s;
+
+}
+
+
+
+
+
+.dm-performance-card.success 
+.dm-progress-bar {
+
+    background:#22c55e;
+
+}
+
+
+
+
+
+
+
+/* เส้นเป้าหมาย */
+
+
+.dm-progress-target {
+
+    position:absolute;
+
+    top:-4px;
+
+    height:22px;
+
+    width:2px;
+
+    background:#333;
+
+}
+
+
+
+
+
+
+.dm-performance-detail {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:10px;
+
+    font-size:13px;
+
+}
+
+
+
+
+
+.dm-performance-card small {
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:12px;
+
+    color:#666;
+
+}
+
+/* =========================================
+   DIRECTORY MAPPING (NEW)
+========================================= */
+
+
+/* กล่องหลักแต่ละหมวด */
+
+.dm-directory-box{
+
+    margin-bottom:24px;
+
+    padding:18px;
+
+    background:#fff;
+
+    border:1px solid #eee;
+
+    border-radius:16px;
+
+}
+
+
+
+/* หัวข้อ OKRs / EGGS / Approach */
+
+
+
+/* ==========================
+   EGGS
+========================== */
+
+
+.dm-eggs-group{
+
+    margin-bottom:18px;
+    padding:14px;
+    border-radius:14px;
+    border:1px solid #eee;
+
+
+}
+
+
+
+.dm-eggs-group h5{
+
+
+    margin:0 0 12px;
+
+
+    font-size:15px;
+
+
+    font-weight:700;
+
+
+    color:#333;
+
+
+}
+
+
+
+
+/* ==========================
+   Item Card
+========================== */
+
+
+
+
+.dm-directory-item strong{
+
+
+    min-width:45px;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+.dm-directory-item p,
+
+
+.dm-directory-item span{
+
+
+    margin:0;
+
+
+    line-height:1.5;
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   Selected
+========================== */
+
+
+.dm-directory-item.active{
+
+
+    background:#dcfce7;
+
+
+    border-color:#86efac;
+
+
+    color:#166534;
+
+
+}
+
+
+
+
+
+/* ==========================
+   Unselected
+========================== */
+
+
+
+
+.dm-directory-item.inactive:hover{
+
+
+    opacity:.85;
+
+
+}
+
+
+
+
+
+
+/* ==========================
+   Responsive
+========================== */
+
+
+@media(max-width:1000px){
+
+
+    .dm-eggs-grid{
+
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+
+    }
+
+
+
+    .dm-approach-grid{
+
+
+        grid-template-columns:
+
+        repeat(4,1fr);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:600px){
+
+
+    .dm-eggs-grid{
+
+
+        grid-template-columns:1fr;
+
+
+    }
+
+
+
+    .dm-approach-grid{
+
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+
+    }
+
+
+
+    .dm-directory-item{
+
+
+        padding:10px;
+
+
+    }
+
+
+}
+
+
+
+
+
+.dm-activity-card{
+
+    margin-bottom:28px;
+
+}
+
+
+.dm-activity-card h4{
+
+    margin: 0 0 16px 0;
+
+    padding-left: 10px;
+
+
+    border-left:5px solid #0f4c81;
+
+
+    font-weight:700;
+
+    color:#222;
+}
+
+
+.dm-activity-table th,
+.dm-activity-table td,
+.dm-rubric-table th,
+.dm-rubric-table td{
+
+    border:1px solid #ddd;
+
+    padding:6px 8px;
+
+    text-align:center;
+
+}
+
+
+.dm-rubric-table{
+
+    margin-top:12px;
+
+}
+
+
+.dm-rubric-table td:last-child,
+.dm-rubric-table th:last-child {
+    text-align: center;
+}
+
+.dm-rubric-table td:last-child strong {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+
+.dm-activity-name{
+
+    margin: 0 0 12px 16px;
+    font-weight:400;
+
+}
+
+.dm-activity-table,
+.dm-rubric-table{
+
+    width:96%;
+
+    margin: auto;
+
+    border-collapse:collapse;
+
+    font-size:13px;
+
+}
+
+.dm-rubric-table td:nth-child(2){
+
+    text-align:left;
+
+}
+
+.dm-rubric-title{
+
+    margin: 18px 0 0 16px;
+    margin-bottom:8px;
+
+}
+
+
+
+
+
+/* =====================================================
+   Description Panel
+===================================================== */
+
+@keyframes panelFade{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   Panel
+===================================================== */
+
+.dm-description-panel{
+border-radius: 12px;
+    position:fixed;
+    left:1vh;
+    bottom:1vh;
+
+    width:800px;
+    height:98vh;
+
+    display:flex;
+    flex-direction:column;
+
+
+    overflow:hidden;
+
+    z-index:99999;
+
+    animation:panelFade .38s ease;
+
+    transition:
+    opacity .450s ease,
+    transform .450s ease;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dm-description-panel {
+    overflow-y: auto;
+
+    direction: rtl;   /* ย้าย scrollbar ไปซ้าย */
+}
+
+.dm-description-panel > * {
+    direction: ltr;   /* ให้ข้อความกลับมาอ่านซ้าย→ขวาปกติ */
+}
+
+.dm-description-body {
+    padding: 10px;
+    overflow-y: auto;
+    direction: rtl;
+}
+
+.dm-description-body > * {
+    direction: ltr;
+}
+
+/* =====================================================
+   Header
+===================================================== */
+
+.dm-description-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* กึ่งกลางแนวตั้ง */
+
+    position:sticky;
+    top:0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:15px;
+
+    padding:14px 18px;
+
+    color:#fff;
+    background-color: rgba(0, 0, 0, 0.1);
+    flex-shrink:0;
+
+    z-index:2;
+
+}
+
+.dm-description-header h4 {
+    margin: 4px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.dm-description-header h3{
+
+    margin:0;
+    color: #fff;
+    font-size:20px;
+    font-weight:700;
+
+}
+
+.dm-description-header div{
+    display:flex;
+    align-items: center;
+    gap:8px;
+
+}
+
+
+/* =====================================================
+   Button
+===================================================== */
+
+.dm-description-header button,
+.dm-description-copy{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:8px 14px;
+
+    border-radius:8px;
+
+    font-size:14px;
+    font-weight:600;
+
+    background:#fff;
+    color:#0f4c81;
+
+    transition:.2s;
+
+}
+
+.dm-description-header button:hover,
+.dm-description-copy:hover{
+
+    background:#eef5ff;
+
+}
+
+
+/* =====================================================
+   Body
+===================================================== */
+
+.dm-description-body{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:22px;
+
+    white-space:pre-wrap;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+    user-select:text;
+
+}
+
+.dm-description-body::-webkit-selection{
+
+    background:#cfe5ff;
+
+}
+
+
+/* =====================================================
+   Scrollbar
+===================================================== */
+
+.dm-description-body::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.dm-description-body::-webkit-scrollbar-thumb{
+
+    background:#c9d3df;
+
+    border-radius:20px;
+
+}
+
+
+/* =====================================================
+   Text
+===================================================== */
+
+.dm-description-body pre{
+
+    margin:0;
+
+    white-space:pre-wrap;
+
+    word-break:break-word;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    font-family:"Sarabun",sans-serif;
+
+}
+
+.dm-description-body h4{
+
+    margin:22px 0 10px;
+
+    padding-left:10px;
+
+    border-left:4px solid #0f4c81;
+
+    color:#0f4c81;
+
+    font-size:17px;
+
+}
+
+.dm-description-body p{
+    margin-left:22px;
+    line-height:1.85;
+}
+
+.dm-description-body ul{
+    margin:10px 0 18px 24px;
+}
+
+.dm-description-body li{
+    line-height:1.75;
+}
+
+.dm-description-body h5 {
+    margin-left:8px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.dm-description-section {
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dm-description-body,
+.dm-description-body p,
+.dm-description-body li,
+.dm-description-body span,
+.dm-description-body strong,
+.dm-description-body h5 {
+    color: #fff;
+}
+
+
+.dm-description-panel.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+    pointer-events: auto;
+}
+
+.dm-description-panel.hide{
+
+    opacity:0;
+
+    transform:translateY(10px);
+
+    pointer-events:none;
+
+}
+
+/**/
+
+
+
+.dm-sdg-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:12px;
+
+}
+
+
+.dm-sdg-item{
+
+    width:100%;
+
+    cursor:pointer;
+
+    transition:.16s;
+
+}
+
+.dm-sdg-item.inactive{
+    opacity:.20;
+    filter:grayscale(10%);
+}
+
+
+.dm-sdg-item.active{
+
+    opacity:1;
+
+    filter: saturate(150%);
+}
+
+
+.dm-sdg-item:hover{
+
+    transform:scale(1.02);
+
+}
+
+
+.dm-description-image{
+
+    width:80px;
+
+    height:auto;
+
+    border-radius:8px;
+
+}
+
+
+.dm-description-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.dm-description-title{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    flex:1;
+}
+
+.dm-description-image{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.dm-description-title h4{
+    margin:0;
+    color:#fff;
+}
+
+.dm-description-title h3{
+    margin:0;
+    color:#fff;
+}
+
+.dm-description-actions{
+    display:flex;
+    align-items:center;
+}
+/**/
+
+
+.dm-rubric-level-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.dm-rubric-level-table th,
+.dm-rubric-level-table td {
+    border: 1px solid #d1d5db;
+    padding: 10px 14px;
+    text-align: center;
+}
+
+.dm-rubric-level-table th {
+    background: #f5f7fa;
+    font-weight: 700;
+}
+
+.dm-rubric-level-table tbody tr:nth-child(even) {
+    background: #fafafa;
+}
+
+.dm-rubric-note {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #555;
+    white-space: pre-line;
+}
+
+
+/**/
+
+.dm-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dm-close {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #666;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+.dm-close:hover {
+    background: #f3f4f6;
+    color: #111;
+}
+
+/**/
+
+
+
+/***/
+.dm-schedule-day {
+    margin-bottom: 24px;
+}
+
+/* =========================
+   Schedule Day Header
+   ========================= */
+
+.dm-schedule-day-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+
+    padding: 12px 16px;
+
+    background: #f5f5f5;
+    border-radius: 8px 8px 0 0;
+
+    text-align: left;
+}
+
+.dm-schedule-day-header h4 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.dm-schedule-day-header strong {
+    font-size: 16px;
+}
+
+.dm-schedule-day-header span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #666;
+}
+
+/* =========================
+   Schedule List
+   ========================= */
+
+.dm-schedule-list {
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+
+/* =========================
+   Schedule Row
+   ========================= */
+
+.dm-schedule-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 16px;
+
+    padding: 12px 16px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.dm-schedule-row:last-child {
+    border-bottom: none;
+}
+
+.dm-schedule-row strong {
+    white-space: nowrap;
+}
+
+.dm-schedule-row span {
+    line-height: 1.6;
+}
+
+
+
+
+/**/
+
+/* =========================
+   KSA SCORE CHART
+========================= */
+/*
+.dm-ksa-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+}
+
+.dm-ksa-chart-row {
+    display: grid;
+    grid-template-columns: 55px minmax(150px, 1fr) 90px 70px;
+    align-items: center;
+    gap: 12px;
+}
+
+.dm-ksa-chart-label strong {
+    font-size: 17px;
+}
+
+.dm-ksa-chart-bar {
+    height: 24px;
+    background: #e5e5e5;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.dm-ksa-chart-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: #4caf50;
+    transition: width 0.4s ease;
+}
+
+.dm-ksa-chart-score {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.dm-ksa-chart-score strong {
+    font-size: 16px;
+}
+
+.dm-ksa-chart-score span {
+    color: #777;
+}
+
+.dm-ksa-chart-percent {
+    text-align: right;
+    font-weight: 600;
+    color: #555;
+}
+*/
+
+
+/* =====================================================
+   KSA SCORE CHART
+===================================================== */
+
+.dm-ksa-score-box {
+    margin-top: 20px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.dm-ksa-score-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+
+.dm-ksa-score-header h4 {
+    margin: 0 0 5px 0;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.dm-ksa-score-header p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   TOTAL SCORE
+========================= */
+
+.dm-ksa-total {
+    display: flex;
+    align-items: baseline;
+
+    gap: 5px;
+
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    background: #f5f5f5;
+}
+
+
+.dm-ksa-total strong {
+    font-size: 22px;
+}
+
+
+.dm-ksa-total span {
+    font-size: 13px;
+
+    color: #777;
+}
+
+
+/* =========================
+   CHART
+========================= */
+
+.dm-ksa-chart {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.dm-ksa-chart-row {
+    display: grid;
+
+    grid-template-columns: 110px 1fr;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.dm-ksa-chart-label {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.dm-ksa-chart-label strong {
+    font-size: 15px;
+
+    min-width: 35px;
+}
+
+
+.dm-ksa-chart-label span {
+    font-size: 13px;
+
+    color: #666;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   BAR BACKGROUND
+========================= */
+
+.dm-ksa-chart-track {
+    position: relative;
+
+    height: 28px;
+
+    background: #f1f1f1;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   BAR
+========================= */
+
+.dm-ksa-chart-bar {
+    height: 100%;
+
+    min-width: 4px;
+
+    border-radius: 6px;
+
+    background: #52a7df;
+
+    transition:
+        width 0.4s ease;
+}
+
+
+/* =========================
+   SCORE DETAIL
+========================= */
+
+.dm-ksa-score-details {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #eee;
+}
+
+
+.dm-ksa-score-detail {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    background: #f7f7f7;
+
+    font-size: 13px;
+}
+
+
+.dm-ksa-score-detail strong {
+    font-size: 13px;
+}
+
+
+.dm-ksa-score-detail span {
+    color: #666;
+}
+
+
+
+
+
+/**/
+
+/* =====================================================
+   KSA MODEL
+===================================================== */
+
+.dm-ksa-model-box {
+    margin-top: 20px;
+}
+
+
+/* =====================================================
+   KSA GROUP
+===================================================== */
+
+.dm-ksa-group {
+    margin-top: 18px;
+    padding: 18px;
+    border: 1px solid #e7e7e7;
+    border-radius: 12px;
+}
+
+
+/* =====================================================
+   GROUP TITLE
+===================================================== */
+
+.dm-ksa-group h5 {
+    margin: 0 0 14px 0;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #ddd;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   SCORE
+===================================================== */
+
+.dm-ksa-inline-score {
+    margin-top: 16px;
+
+    padding-top: 14px;
+
+    border-top: 1px dashed #ddd;
+}
+
+
+/* =====================================================
+   SCORE HEADER
+===================================================== */
+
+.dm-ksa-inline-score-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 7px;
+}
+
+
+.dm-ksa-inline-score-header strong {
+    font-size: 14px;
+}
+
+
+.dm-ksa-inline-score-header span {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #555;
+}
+
+
+/* =====================================================
+   SCORE BAR BACKGROUND
+===================================================== */
+
+.dm-ksa-inline-track {
+    width: 100%;
+
+    height: 18px;
+
+    background: #e8e8e8;
+
+    border-radius: 999px;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   SCORE BAR
+===================================================== */
+
+.dm-ksa-inline-bar {
+    height: 100%;
+
+    min-width: 4px;
+
+    background: #52a7df;
+
+    border-radius: 999px;
+
+    transition: width 0.4s ease;
+}
+
+
+
+
+
+/* =========================================================
+   KSA MODEL
+========================================================= */
+
+.dm-ksa-model-wrapper {
+    width: 100%;
+}
+
+
+/* =========================================================
+   KSA MODEL TITLE
+========================================================= */
+
+.dm-ksa-model-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1f2937;
+
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   KSA SECTION
+   แต่ละ Knowledge / Skills / Attribute
+   จะเป็น dm-directory-box ของตัวเอง
+========================================================= */
+
+.dm-ksa-section {
+    margin-bottom: 16px;
+}
+
+
+/* =========================================================
+   KSA SCORE AREA
+========================================================= */
+
+.dm-ksa-score-area {
+    margin-top: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+/* =========================================================
+   KSA SCORE CARD
+========================================================= */
+
+.dm-ksa-score-card {
+
+    width: 100%;
+
+    margin-top: 16px;
+
+    box-sizing: border-box;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.dm-ksa-score-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.dm-ksa-score-header > div:first-child {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.dm-ksa-score-header strong {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+}
+
+
+.dm-ksa-score-header span {
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+}
+
+
+.dm-ksa-score-result {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 3px;
+
+}
+
+
+.dm-ksa-score-result strong {
+
+    font-size: 26px;
+
+}
+
+
+.dm-ksa-score-result span {
+
+    font-size: 16px;
+
+    color: #6b7280;
+
+}
+
+
+.dm-ksa-score-result small {
+
+    margin-left: 8px;
+
+    font-size: 13px;
+
+    color: #6b7280;
+
+}
+
+
+/* =========================================================
+   CHART
+========================================================= */
+
+.dm-ksa-chart {
+
+    width: 100%;
+
+    padding: 0 8px;
+
+    box-sizing: border-box;
+
+}
+
+
+.dm-ksa-chart-scale {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 11px;
+
+    color: #9ca3af;
+
+    margin-bottom: 6px;
+
+}
+
+
+.dm-ksa-chart-track {
+
+    position: relative;
+
+    height: 52px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 24px,
+            #e5e7eb 24px,
+            #e5e7eb 28px,
+            transparent 28px
+        );
+
+}
+
+
+/* =========================================================
+   MIN → MAX RANGE
+========================================================= */
+
+.dm-ksa-range {
+
+    position: absolute;
+
+    top: 23px;
+
+    height: 6px;
+
+    border-radius: 999px;
+
+    background: #d1d5db;
+
+}
+
+
+/* =========================================================
+   S.D. RANGE
+========================================================= */
+
+.dm-ksa-sd-range {
+
+    position: absolute;
+
+    top: 19px;
+
+    height: 14px;
+
+    border-radius: 999px;
+
+    background: #9ca3af;
+
+    opacity: 0.35;
+
+}
+
+
+/* =========================================================
+   MARKERS
+========================================================= */
+
+.dm-ksa-marker {
+
+    position: absolute;
+
+    top: 0;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    z-index: 2;
+
+}
+
+
+.dm-ksa-marker::after {
+
+    content: "";
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #374151;
+
+    border: 2px solid #ffffff;
+
+    box-shadow:
+        0 0 0 1px #9ca3af;
+
+    order: 2;
+
+}
+
+
+.dm-ksa-marker span {
+
+    font-size: 10px;
+
+    color: #6b7280;
+
+    white-space: nowrap;
+
+    margin-bottom: 3px;
+
+}
+
+
+.dm-ksa-marker strong {
+
+    position: absolute;
+
+    top: 27px;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   MEAN
+========================================================= */
+
+.dm-ksa-mean {
+
+    z-index: 4;
+
+}
+
+
+.dm-ksa-mean::after {
+
+    width: 14px;
+
+    height: 14px;
+
+    background: #111827;
+
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.dm-ksa-stat-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-top: 14px;
+
+}
+
+
+.dm-ksa-stat-grid > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 58px;
+
+    padding: 8px;
+
+    box-sizing: border-box;
+
+    border-radius: 8px;
+
+    background: #f9fafb;
+
+    border: 1px solid #f0f0f0;
+
+}
+
+
+.dm-ksa-stat-grid span {
+
+    font-size: 11px;
+
+    color: #6b7280;
+
+}
+
+
+.dm-ksa-stat-grid strong {
+
+    margin-top: 3px;
+
+    font-size: 15px;
+
+}
+
+
+.dm-ksa-weight {
+    margin-top: 18px;
+}
+
+.dm-ksa-weight-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.dm-ksa-weight-header span {
+    font-size: 14px;
+}
+
+.dm-ksa-weight-header strong {
+    font-size: 14px;
+}
+
+
+/* =========================
+   Graph 0 - 100
+========================= */
+
+.dm-ksa-weight-track {
+    position: relative;
+    width: 100%;
+    height: 14px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: visible;
+}
+
+
+/* คะแนนที่ได้ */
+
+.dm-ksa-weight-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+
+    background: #52c568;
+
+    border-radius: 999px 0 0 999px;
+
+    transition: width 0.3s ease;
+}
+
+
+/* ขีดคะแนนเต็มของด้าน */
+
+.dm-ksa-weight-limit {
+    position: absolute;
+
+    top: -2px;
+
+    width: 2px;
+    height: 18px;
+
+    background: #222;
+
+    transform: translateX(-1px);
+
+    z-index: 3;
+}
+
+
+/* Scale */
+
+.dm-ksa-weight-scale {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+    color: #888;
+}
+
+
+.dm-ksa-marker-combined {
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 20;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.dm-ksa-marker-combined span {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.dm-ksa-marker-combined strong {
+    display: block;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.dm-ksa-summary {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 6px;
+
+    margin-top: 12px;
+
+    font-size: 12px;
+
+}
+
+
+.dm-ksa-summary span {
+
+    color: #6b7280;
+
+}
+
+
+.dm-ksa-summary strong {
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .dm-ksa-stat-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .dm-ksa-score-header {
+
+        align-items: flex-start;
+
+    }
+
+
+    .dm-ksa-score-result {
+
+        flex-direction: column;
+
+        align-items: flex-end;
+
+    }
+
+
+    .dm-ksa-score-result small {
+
+        margin-left: 0;
+
+    }
+
+}
+
+
+
+
+/* =====================================================
+   KSA SIMPLE SCORE GRAPH
+===================================================== */
+
+.dm-ksa-simple-chart {
+    position: relative;
+    width: 100%;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: visible;
+}
+
+
+/* คะแนนที่ได้ */
+
+.dm-ksa-simple-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    height: 100%;
+
+    background: #5fc466;
+
+    border-radius: 999px 0 0 999px;
+
+    transition:
+        width 0.3s ease;
+}
+
+
+/* =====================================================
+   ขีดคะแนนเต็ม
+===================================================== */
+
+.dm-ksa-full-marker {
+    position: absolute;
+
+    top: -5px;
+
+    width: 3px;
+    height: 22px;
+
+    background: #222;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+}
+
+
+/* =====================================================
+   SCORE LABEL
+===================================================== */
+
+.dm-ksa-chart-score-label {
+    position: absolute;
+
+    top: 20px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    white-space: nowrap;
+
+    font-size: 12px;
+}
+
+
+.dm-ksa-chart-score-label strong {
+    font-size: 15px;
+}
+
+
+.dm-ksa-chart-score-label span {
+    color: #777;
+}
+
+
+/* =====================================================
+   FULL SCORE LABEL
+===================================================== */
+
+.dm-ksa-chart-full-label {
+    position: absolute;
+
+    top: 20px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    white-space: nowrap;
+
+    font-size: 11px;
+
+    color: #666;
+}
+
+
+.dm-ksa-chart-full-label strong {
+    font-size: 13px;
+    color: #222;
+}
+
+
+
+/* =====================================================
+   KSA NEW SCORE GRAPH
+===================================================== */
+
+.dm-ksa-chart-new {
+    margin-top: 22px;
+    padding: 0 12px;
+}
+
+
+/* SCALE */
+
+.dm-ksa-chart-new .dm-ksa-chart-scale {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 34px;
+    color: #8b96a8;
+    font-size: 14px;
+}
+
+
+/* TRACK */
+
+.dm-ksa-chart-track-new {
+    position: relative;
+    height: 95px;
+    margin: 0 12px;
+}
+
+
+/* BASE LINE */
+
+.dm-ksa-chart-track-new::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 42px;
+    height: 6px;
+    border-radius: 999px;
+    background: #e5e7eb;
+}
+
+
+/* MIN → MAX */
+
+.dm-ksa-range-new {
+    position: absolute;
+    top: 40px;
+    height: 10px;
+    border-radius: 999px;
+    background: #cbd5e1;
+}
+
+
+/* SD */
+
+.dm-ksa-sd-range-new {
+    position: absolute;
+    top: 39px;
+    height: 12px;
+    border-radius: 999px;
+    background: #94a3b8;
+    opacity: 0.55;
+}
+
+
+/* =====================================================
+   MARKER
+===================================================== */
+
+.dm-ksa-marker-new {
+    position: absolute;
+
+    top: 0;
+
+    width: 44px;
+
+    transform:
+        translateX(
+            calc(-50% + var(--marker-offset))
+        );
+
+    text-align: center;
+
+    z-index: 5;
+}
+
+
+/* LABEL */
+
+.dm-ksa-marker-label {
+    height: 24px;
+
+    font-size: 13px;
+
+    color: #64748b;
+
+    white-space: nowrap;
+}
+
+
+/* DOT */
+
+.dm-ksa-marker-dot {
+    width: 22px;
+    height: 22px;
+
+    margin: 7px auto 5px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    border: 3px solid #64748b;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* จุดด้านใน */
+
+.dm-ksa-marker-dot span {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #64748b;
+}
+
+
+/* VALUE */
+
+.dm-ksa-marker-new strong {
+    display: block;
+
+    font-size: 14px;
+
+    color: #111827;
+}
+
+
+/* =====================================================
+   SCORE
+===================================================== */
+
+.dm-ksa-marker-new.score-marker {
+    z-index: 10;
+}
+
+
+.dm-ksa-marker-new.score-marker .dm-ksa-marker-label {
+    color: #111827;
+    font-weight: 600;
+}
+
+
+.dm-ksa-marker-new.score-marker .dm-ksa-marker-dot {
+    width: 26px;
+    height: 26px;
+
+    border-color: #111827;
+
+    background: #111827;
+}
+
+
+.dm-ksa-marker-new.score-marker
+.dm-ksa-marker-dot span {
+    background: white;
+
+    width: 10px;
+    height: 10px;
+}
+
+
+.dm-ksa-marker-new.score-marker strong {
+    font-size: 15px;
+
+    color: #111827;
+}
+
+
+/* =====================================================
+   LEGEND
+===================================================== */
+
+.dm-ksa-marker-legend {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-top: 4px;
+    margin-bottom: 20px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    background: #fafafa;
+}
+
+
+.dm-ksa-marker-legend > div {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+
+.dm-ksa-marker-legend strong {
+
+    color: #111827;
+
+    font-size: 14px;
+
+    margin-left: 2px;
+}
+
+
+/* LEGEND DOT */
+
+.legend-dot {
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+
+.min-dot {
+    background: #64748b;
+}
+
+.mean-dot {
+    background: #94a3b8;
+}
+
+.max-dot {
+    background: #475569;
+}
+
+.score-dot {
+    background: #111827;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .dm-ksa-marker-legend {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}

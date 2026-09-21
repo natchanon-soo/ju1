@@ -1,0 +1,428 @@
+/* =========================
+   BREADCRUMBS
+========================= */
+
+.crumbs.svelte-z9xysv {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+
+    margin-bottom: 10px;
+
+    font-size: 13.5px;
+}
+
+.crumb.svelte-z9xysv {
+    border: 0;
+
+    background: transparent;
+
+    font-family: inherit;
+    font-weight: 600;
+
+    color: var(--primary);
+
+    cursor: pointer;
+
+    padding: 2px 4px;
+}
+
+.crumb.root.svelte-z9xysv {
+    color: var(--text);
+}
+
+.sep.svelte-z9xysv {
+    color: var(--text-faint);
+}
+
+.crumb-right.svelte-z9xysv {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.crumb-total.svelte-z9xysv {
+    font-weight: 600;
+}
+
+
+/* =========================
+   PLOT / TILE
+========================= */
+
+.plot.svelte-z9xysv {
+    width: 100%;
+}
+
+.tile.svelte-z9xysv {
+    cursor: default;
+}
+
+.tile.clickable.svelte-z9xysv {
+    cursor: pointer;
+}
+
+.tile.svelte-z9xysv
+rect:where(.svelte-z9xysv) {
+    transition: opacity .12s;
+}
+
+.tile.svelte-z9xysv:hover
+rect:where(.svelte-z9xysv) {
+    opacity: .85;
+}
+
+.tlabel.svelte-z9xysv {
+    font-size: 12px;
+    font-weight: 600;
+
+    fill: #fff;
+
+    pointer-events: none;
+}
+
+.tval.svelte-z9xysv {
+    font-size: 11px;
+
+    fill: #ffffffd9;
+
+    pointer-events: none;
+}
+
+.avatar-init.svelte-z9xysv {
+    fill: #fff;
+
+    font-family: var(--font-heading);
+    font-weight: 500;
+
+    pointer-events: none;
+}
+
+.hint.svelte-z9xysv {
+    margin: 8px 0 0;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   LINKS / NODES
+========================= */
+
+.sk.svelte-ckeoow {
+    width: 100%;
+}
+
+.link.svelte-ckeoow {
+    fill: none;
+
+    stroke-opacity: .34;
+
+    transition:
+        stroke-opacity .12s;
+}
+
+.link.svelte-ckeoow:hover {
+    stroke-opacity: .6;
+}
+
+.nlabel.svelte-ckeoow {
+    font-size: 11.5px;
+
+    fill: var(--text);
+
+    pointer-events: none;
+}
+
+.empty.svelte-ckeoow {
+    display: grid;
+    place-items: center;
+
+    height: 200px;
+}
+
+
+/* =========================
+   BAR LIST
+========================= */
+
+.barlist.svelte-pr118e {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.head.svelte-pr118e,
+.val-num.svelte-pr118e {
+    display: none;
+}
+
+.row.svelte-pr118e {
+    display: grid;
+
+    grid-template-columns:
+        minmax(120px, 1.4fr)
+        2fr
+        auto
+        52px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: transparent;
+
+    font-family: inherit;
+    text-align: left;
+
+    padding: 5px 6px;
+
+    cursor: pointer;
+}
+
+.row.svelte-pr118e:hover {
+    background: var(--surface-2);
+}
+
+.lbl.svelte-pr118e {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+
+    font-size: 13.5px;
+    font-weight: 500;
+}
+
+.lbl-t.svelte-pr118e {
+    min-width: 0;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track.svelte-pr118e {
+    height: 9px;
+
+    background: var(--surface-2);
+
+    border-radius: 999px;
+
+    overflow: hidden;
+}
+
+.bar.svelte-pr118e {
+    height: 100%;
+
+    border-radius: 999px;
+
+    transition:
+        width .4s ease;
+}
+
+.val.svelte-pr118e {
+    font-size: 13px;
+    font-weight: 600;
+
+    text-align: right;
+}
+
+.shr.svelte-pr118e {
+    font-size: 12px;
+
+    text-align: right;
+}
+
+
+/* =========================
+   BAR LIST - MOBILE
+========================= */
+
+@media (max-width: 640px) {
+
+    .row.svelte-pr118e {
+        grid-template-columns:
+            minmax(120px, 1.7fr)
+            1.2fr
+            auto;
+    }
+
+    .shr.svelte-pr118e {
+        display: none;
+    }
+
+    .head.svelte-pr118e {
+        display: grid;
+
+        grid-template-columns:
+            minmax(120px, 1.7fr)
+            1.2fr
+            auto;
+
+        gap: 12px;
+
+        padding:
+            0 6px 4px;
+    }
+
+    .head-unit.svelte-pr118e {
+        grid-column: 3;
+
+        text-align: right;
+
+        font-size: 11px;
+        font-weight: 500;
+
+        color: var(--text-faint);
+    }
+
+    .val-full.svelte-pr118e {
+        display: none;
+    }
+
+    .val-num.svelte-pr118e {
+        display: inline;
+    }
+}
+
+
+/* =========================
+   DONUT
+========================= */
+
+.donut-wrap.svelte-1rc5ep9 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 18px;
+}
+
+.slice.svelte-1rc5ep9 {
+    cursor: default;
+
+    transition:
+        opacity .12s;
+}
+
+.slice.svelte-1rc5ep9:hover {
+    opacity: .82;
+}
+
+.ctr.svelte-1rc5ep9 {
+    font-size: 12px;
+    font-weight: 600;
+
+    fill: var(--text-muted);
+}
+
+.legend.svelte-1rc5ep9 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    gap: 5px;
+
+    min-width: 150px;
+}
+
+.lg.svelte-1rc5ep9 {
+    display: grid;
+
+    grid-template-columns:
+        auto 1fr auto;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+}
+
+.dot.svelte-1rc5ep9 {
+    width: 11px;
+    height: 11px;
+
+    border-radius: 3px;
+}
+
+.nm.svelte-1rc5ep9 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page.svelte-1uha8ag {
+    padding:
+        26px 20px 0;
+}
+
+.page-head.svelte-1uha8ag {
+    margin-bottom: 18px;
+}
+
+.page-head.svelte-1uha8ag
+h1:where(.svelte-1uha8ag) {
+    font-size: 23px;
+}
+
+
+/* =========================
+   KPI
+========================= */
+
+.kpis.svelte-1uha8ag {
+    grid-template-columns:
+        repeat(4, 1fr);
+}
+
+
+/* =========================
+   TWO COLUMNS
+========================= */
+
+.two-col.svelte-1uha8ag {
+    display: grid;
+
+    grid-template-columns:
+        1.3fr 1fr;
+
+    gap: 16px;
+}
+
+.page > section,
+.page > .two-col {
+    margin-top: 16px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .kpis.svelte-1uha8ag {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .two-col.svelte-1uha8ag {
+        grid-template-columns: 1fr;
+    }
+}

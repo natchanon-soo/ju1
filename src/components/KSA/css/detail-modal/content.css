@@ -1,0 +1,65 @@
+/* =====================================================
+   DETAIL MODAL
+   Content / Text / Info / List
+===================================================== */
+
+
+/* =====================================================
+   Text Content
+===================================================== */
+
+.dm-text {
+
+    background: #fafafa;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    line-height: 1.9;
+
+    color: #333;
+
+    white-space: pre-line;
+
+    text-align: justify;
+
+}
+
+
+
+/* =====================================================
+   List
+===================================================== */
+
+.dm-list {
+
+    background: #fafafa;
+
+    padding: 20px 30px;
+
+    border-radius: 12px;
+
+}
+
+.dm-listnonrad {
+
+   background: #fafafa;
+
+   padding: 5px 30px 10px;
+   margin: 15px 10px 20px;
+   border-radius: 12px;
+
+}
+
+/* =====================================================
+   List Item
+===================================================== */
+
+.dm-list li {
+
+    margin-bottom: 10px;
+
+    line-height: 1.8;
+
+}

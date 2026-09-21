@@ -1,0 +1,215 @@
+/* =====================================================
+   DETAIL MODAL
+   Schedule
+===================================================== */
+
+
+/* =====================================================
+   Schedule
+===================================================== */
+
+.dm-schedule {
+
+    border-left: 3px solid #333;
+
+    padding-left: 20px;
+
+}
+
+
+/* =====================================================
+   Schedule Day
+===================================================== */
+
+.dm-schedule-day {
+
+    margin-bottom: 24px;
+
+}
+
+
+/* =====================================================
+   Schedule Day Header
+===================================================== */
+
+.dm-schedule-day-header {
+
+    display: flex;
+
+    justify-content: flex-start;
+
+    align-items: baseline;
+
+    padding: 12px 16px;
+
+    background: #f5f5f5;
+
+    border-radius: 8px 8px 0 0;
+
+    text-align: left;
+
+}
+
+
+/* =====================================================
+   Day Header - Title
+===================================================== */
+
+.dm-schedule-day-header h4 {
+
+    margin: 0;
+
+    font-size: 1.4rem;
+
+}
+
+
+/* =====================================================
+   Day Header - Strong
+===================================================== */
+
+.dm-schedule-day-header strong {
+
+    font-size: 16px;
+
+}
+
+
+/* =====================================================
+   Day Header - Secondary Text
+===================================================== */
+
+.dm-schedule-day-header span {
+
+    font-size: 1.2rem;
+
+    font-weight: 600;
+
+    color: #666;
+
+}
+
+
+/* =====================================================
+   Schedule List
+===================================================== */
+
+.dm-schedule-list {
+
+    border: 1px solid #ddd;
+
+    border-top: none;
+
+    border-radius: 0 0 8px 8px;
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   Schedule Row
+===================================================== */
+
+.dm-schedule-row {
+
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 16px;
+
+    padding: 12px 16px;
+
+    border-bottom: 1px solid #eee;
+
+}
+
+
+/* =====================================================
+   Last Row
+===================================================== */
+
+.dm-schedule-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+/* =====================================================
+   Schedule Row - Label
+===================================================== */
+
+.dm-schedule-row strong {
+
+    min-width: 150px;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   Schedule Row - Detail
+===================================================== */
+
+.dm-schedule-row span {
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   Responsive
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .dm-schedule {
+
+        padding-left: 12px;
+
+    }
+
+
+    .dm-schedule-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 6px;
+
+    }
+
+
+    .dm-schedule-row strong {
+
+        min-width: auto;
+
+    }
+
+
+    .dm-schedule-day-header {
+
+        flex-wrap: wrap;
+
+        gap: 4px;
+
+    }
+
+
+    .dm-schedule-day-header h4 {
+
+        font-size: 1.2rem;
+
+    }
+
+
+    .dm-schedule-day-header span {
+
+        font-size: 1rem;
+
+    }
+
+}
